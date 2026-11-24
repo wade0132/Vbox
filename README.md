@@ -19,7 +19,7 @@
 
 ## 项目简介
 
-V影视 是在 [AVBox](https://github.com/XiaochangXu/AVBox) v1.4.0 基础上二次开发的 Android 播放器框架，保留上游的点播、直播、TMDB 刮削与播放能力，并新增坚果云 WebDAV 多端同步与一套全新的视觉设计。
+V影视 是在 [AVBox](https://github.com/XiaochangXu/AVBox) v1.4.0 基础上二次开发的 Android 播放器框架，保留上游的点播、直播、TMDB 刮削与播放能力，并新增坚果云 WebDAV 多端同步与若干界面改进。
 
 - 版本：versionName `1.4.0` / versionCode `44`
 - 架构：`arm64-v8a`，Android 7.0+
@@ -42,17 +42,10 @@ V影视 是在 [AVBox](https://github.com/XiaochangXu/AVBox) v1.4.0 基础上二
 
 配置路径：**设置 → 坚果云观影记录同步**，填写坚果云账号与第三方应用密码，开启「打开 APP 自动同步」。多端使用同一坚果云账号与同一配置目录即可互相同步；配置恢复后建议重启 App。
 
-### 界面与图标
-
-桌面图标、启动图、首页左上角胶囊统一采用「爆米花桶 + V + 胶片卷」设计：纯浅底 + 透明图形，去除方块遮罩，图形完整居中（较上一版缩小 15%），并整体提升资源分辨率；「我的」页顶部使用线条风 logo。同时修复了 UI 错位与网络 401 报错。
-
-<div align="center">
-  <img src="images/icon-preview.png" width="440" alt="图标与启动图预览"/>
-</div>
-
 ### 其他改进
 
 - 移除上游 1.3.0 起已废弃的 M3U8 净化功能（开关、文案、KV 键、播放分支与底层实现类全部清除）
+- 修复 UI 错位与网络 401 报错
 - 设置页 GitHub 仓库链接改为本项目，关于页免责声明改写为「基于 axbox 二开」并补充出处链接
 - 开启 R8 代码与资源压缩，安装包由约 53 MB 优化至 42.68 MB
 
@@ -79,7 +72,7 @@ V影视 是在 [AVBox](https://github.com/XiaochangXu/AVBox) v1.4.0 基础上二
 
 ## 截图展示
 
-> 以下为上游界面截图。V影视 沿用同一界面结构，桌面图标、启动图与「我的」页 logo 已替换为本项目设计。
+> 以下为界面截图。
 
 <table>
   <tr>
