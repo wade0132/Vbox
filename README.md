@@ -3,8 +3,101 @@
 </div>
 
 <div align="center">
-  <img src="images/avbox.svg" width="120" alt="AVBox"/>
+  <img src="images/vbox-icon.png" width="120" alt="V影视"/>
   <br/>
+
+# V影视
+
+**基于 AVBox 二次开发的开源 Android 影视播放器框架**
+
+版本 `1.4.0` · 包名 `com.github.VVbox.osc` · Android 7.0+（`arm64-v8a`）· [AGPL-3.0](LICENSE)
+
+[下载安装包](https://github.com/wade0132/Vbox/releases/tag/v1.4.0) · [提交 Issue](https://github.com/wade0132/Vbox/issues) · [上游项目 AVBox](https://github.com/XiaochangXu/AVBox)
+</div>
+
+> 本软件仅提供播放界面、源配置管理与本地播放能力，默认**不预置、不内置、不提供**任何影视内容、直播频道、节目单或第三方解析接口。使用前请阅读文末的[免责声明与用户协议](#免责声明与用户协议)。
+
+## 项目简介
+
+V影视 是在 [AVBox](https://github.com/XiaochangXu/AVBox) v1.4.0 基础上二次开发的 Android 播放器框架，保留上游的点播、直播、TMDB 刮削与播放能力，并新增坚果云 WebDAV 多端同步与一套全新的视觉设计。
+
+- 版本：versionName `1.4.0` / versionCode `44`
+- 架构：`arm64-v8a`，Android 7.0+
+- 体积：开启 R8 代码与资源压缩后，安装包约 42.68 MB
+- 源码：本仓库 `main` 分支即为二次开发后的完整可编译工程
+
+## 主要功能
+
+### 坚果云多端同步
+
+通过坚果云 WebDAV（**第三方应用密码**，非登录密码）在多台设备之间同步数据。合并按 `recordAt` / `progressAt` 字段级时间戳进行，墓碑保留 90 天。
+
+| 同步内容 | 说明 |
+| --- | --- |
+| 观影历史 | 按 `sourceKey\|vodId` 合并，计数与「历史」页同源 |
+| 分集播放进度 | 同步真实毫秒进度并写回播放器进度缓存，多端续播 |
+| App 设置 / 点播 / 直播 / TMDB 配置 | 云端备份、一键恢复、一键清除 |
+
+**自动同步逻辑**覆盖冷启动、从后台回到前台、定时轮询、网络恢复补做、刚开启同步等全部触发源；等待订阅 CID 就绪，重复触发串行合并，失败按约 3s / 12s / 40s 指数退避重试 3 次，401/403 等不可重试错误立即结束，无网络时标记待补。同步界面会显示操作结果提示与上次自动同步状态。
+
+配置路径：**设置 → 坚果云观影记录同步**，填写坚果云账号与第三方应用密码，开启「打开 APP 自动同步」。多端使用同一坚果云账号与同一配置目录即可互相同步；配置恢复后建议重启 App。
+
+### 界面与图标
+
+桌面图标、启动图、首页左上角胶囊统一采用「爆米花桶 + V + 胶片卷」设计：纯浅底 + 透明图形，去除方块遮罩，图形完整居中（较上一版缩小 15%），并整体提升资源分辨率；「我的」页顶部使用线条风 logo。同时修复了 UI 错位与网络 401 报错。
+
+<div align="center">
+  <img src="images/icon-preview.png" width="440" alt="图标与启动图预览"/>
+</div>
+
+### 其他改进
+
+- 移除上游 1.3.0 起已废弃的 M3U8 净化功能（开关、文案、KV 键、播放分支与底层实现类全部清除）
+- 设置页 GitHub 仓库链接改为本项目，关于页免责声明改写为「基于 axbox 二开」并补充出处链接
+- 开启 R8 代码与资源压缩，安装包由约 53 MB 优化至 42.68 MB
+
+## 下载与安装
+
+前往 [v1.4.0 Release](https://github.com/wade0132/Vbox/releases/tag/v1.4.0) 下载：
+
+| 文件 | 说明 |
+| --- | --- |
+| `VVbox-1.4.0.apk` | 安装包，`arm64-v8a`，Android Debug 签名，可直接覆盖安装 |
+| `VVbox-1.4.0-source.zip` | 完整可编译工程源码（已排除 build 产物、SDK 与本地配置） |
+| `avbox-nutstore-sync.zip` | 坚果云同步模块独立源码 + 接入文档 `INTEGRATION.md` |
+| `VVbox-icon-preview.png` | 图标 / 启动图预览 |
+
+> GitHub Release 不支持中文资产名，故上传文件统一使用英文文件名，内容与本地同名文件逐字节一致。
+
+## 从源码构建
+
+- JDK 21、Gradle 9.9.1、Android SDK（compileSdk 35+、build-tools 36）、NDK 27.2
+- Python 3.10（Chaquopy 构建需要）
+- `./gradlew assembleDebug`
+
+同步模块可独立接入上游 AVBox，接入步骤见 `avbox-nutstore-sync.zip` 内的 `INTEGRATION.md`。
+
+## 截图展示
+
+> 以下为上游界面截图。V影视 沿用同一界面结构，桌面图标、启动图与「我的」页 logo 已替换为本项目设计。
+
+<table>
+  <tr>
+    <td align="center"><img src="images/1.jpg" width="270"/><br/><sub>首页</sub></td>
+    <td align="center"><img src="images/2.jpg" width="270"/><br/><sub>播放页</sub></td>
+    <td align="center"><img src="images/3.jpg" width="270"/><br/><sub>历史页</sub></td>
+    <td align="center"><img src="images/4.jpg" width="270"/><br/><sub>设置页</sub></td>
+   </tr>
+</table>
+
+<p align="center">
+  <img src="images/5.jpg" alt="宽屏首页"/>
+  <br/><sub>宽屏首页</sub>
+</p>
+<p align="center">
+  <img src="images/6.jpg" alt="桌面端"/>
+  <br/><sub>桌面端（仅支持 py 和 md5 格式的源）</sub>
+</p>
 
 # 免责声明与用户协议
 
@@ -12,7 +105,7 @@
 
 ## 一、软件性质
 
-1. AVBox（AudioVideoBox）是一款开源的视频播放器框架，仅提供播放界面、源配置管理和本地播放能力。
+1. V影视（基于 [AVBox](https://github.com/XiaochangXu/AVBox) 二次开发）是一款开源的视频播放器框架，仅提供播放界面、源配置管理和本地播放能力。
 2. 本软件默认状态下**不预置、不内置、不提供**任何影视内容、直播频道、节目单、订阅服务或第三方解析接口。
 3. 本软件开发者不参与任何内容的制作、上传、存储、分发或运营。
 
@@ -35,7 +128,8 @@
 ## 四、知识产权
 
 1. 本软件代码以 **GNU Affero General Public License v3.0（AGPL-3.0）** 开源，源代码及许可证详见仓库根目录 `LICENSE` 文件。
-2. 本软件基于以下上游项目开发，相关权利归原作者所有：
+2. 本软件基于以下上游项目二次开发，相关权利归原作者所有：
+   - [XiaochangXu/AVBox](https://github.com/XiaochangXu/AVBox)
    - [TVBoxOS](https://github.com/q215613905/TVBoxOS)
 3. 基于本软件进行二次开发或分发时，必须遵守 AGPL-3.0 许可证条款，保留原始版权声明和出处链接，并以相同许可证公开衍生作品的源代码。
 4. 本软件名称、Logo 及相关标识的权利归项目开发者所有，未经授权不得用于商业宣传或误导性使用。
@@ -57,9 +151,11 @@
 
 ## 七、隐私与数据
 
-1. 本软件不收集用户的个人身份信息。播放历史、源配置、观看记录等数据仅存储在用户本地设备，不上传至任何服务器。
-2. 本软件不包含任何用户统计、埋点或广告追踪 SDK。
-3. 用户通过第三方源访问的网站可能自行收集数据，相关隐私政策由该第三方负责，与本软件无关。
+1. 本软件不收集用户的个人身份信息，不包含任何用户统计、埋点或广告追踪 SDK。
+2. **未开启云同步时**，播放历史、源配置、观看记录等数据仅存储在用户本地设备，不上传至任何服务器。
+3. **开启坚果云观影记录同步后**，由用户主动配置的观影历史、分集播放进度与 App 配置会上传至**用户自己的坚果云账号**，由用户自行管理；本软件开发者不接收、不存储、不访问这些数据。坚果云账号与第三方应用密码仅保存在用户设备本地。
+4. 用户通过第三方源访问的网站可能自行收集数据，相关隐私政策由该第三方负责，与本软件无关。
+5. 用户应妥善保管自己的坚果云账号与应用密码，因账号共享、密码泄露造成的数据风险由用户自行承担。
 
 ## 八、其他
 
@@ -67,21 +163,8 @@
 2. 如本声明部分条款被认定为无效或不可执行，不影响其余条款的效力。
 3. 开发者保留随时修订本声明的权利，修订后的声明自发布之日起生效。
 
-# 截图展示
+# 开源协议与致谢
 
-<table>
-  <tr>
-    <td align="center"><img src="images/1.jpg" width="270"/><br/><sub>首页</sub></td>
-    <td align="center"><img src="images/2.jpg" width="270"/><br/><sub>播放页</sub></td>
-    <td align="center"><img src="images/3.jpg" width="270"/><br/><sub>历史页</sub></td>
-    <td align="center"><img src="images/4.jpg" width="270"/><br/><sub>设置页</sub></td>
-   </tr>
-</table>
-
-<p align="center">
-  <img src="images/5.jpg" alt="首页"/>
-  <br/><sub>宽屏首页</sub>
-<p align="center">
-  <img src="images/6.jpg" alt="首页"/>
-  <br/><sub>桌面端（仅支持 py 和 md5 格式的源）</sub>
-</p>
+- 本项目：[wade0132/Vbox](https://github.com/wade0132/Vbox) · AGPL-3.0（详见 `LICENSE`）
+- 上游项目：[XiaochangXu/AVBox](https://github.com/XiaochangXu/AVBox) · [TVBoxOS](https://github.com/q215613905/TVBoxOS)
+- 基于本软件二次开发或分发须遵守 AGPL-3.0，保留原始版权声明与出处链接，并以相同许可证公开衍生作品源码。
