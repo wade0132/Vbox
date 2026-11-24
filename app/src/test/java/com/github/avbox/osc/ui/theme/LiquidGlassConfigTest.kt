@@ -1,4 +1,4 @@
-package com.github.avbox.osc.ui.theme
+package com.github.VVbox.osc.ui.theme
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue

@@ -1,4 +1,4 @@
-package com.github.avbox.osc.ui.components
+package com.github.VVbox.osc.ui.components
 
 import androidx.compose.ui.unit.dp
 import org.junit.Assert.assertEquals

@@ -1,6 +1,6 @@
-package com.github.avbox.osc.ui.page
+package com.github.VVbox.osc.ui.page
 
-import com.github.avbox.osc.bean.MovieSort
+import com.github.VVbox.osc.bean.MovieSort
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull

@@ -1,6 +1,6 @@
-package com.github.avbox.osc.ui
+package com.github.VVbox.osc.ui
 
-import com.github.avbox.osc.bean.EpgInfo
+import com.github.VVbox.osc.bean.EpgInfo
 import com.google.gson.JsonObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

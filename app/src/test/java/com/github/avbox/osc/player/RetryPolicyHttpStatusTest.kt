@@ -1,9 +1,9 @@
-package com.github.avbox.osc.player
+package com.github.VVbox.osc.player
 
 import android.net.Uri
 import androidx.media3.datasource.DataSpec
 import androidx.media3.datasource.HttpDataSource
-import com.github.avbox.osc.player.core.RetryPolicy
+import com.github.VVbox.osc.player.core.RetryPolicy
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith

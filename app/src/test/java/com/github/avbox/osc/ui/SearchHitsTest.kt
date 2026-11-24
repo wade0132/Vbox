@@ -1,6 +1,6 @@
-package com.github.avbox.osc.ui
+package com.github.VVbox.osc.ui
 
-import com.github.avbox.osc.bean.Movie
+import com.github.VVbox.osc.bean.Movie
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

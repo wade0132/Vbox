@@ -1,7 +1,7 @@
-package com.github.avbox.osc.ui.page
+package com.github.VVbox.osc.ui.page
 
-import com.github.avbox.osc.api.AppBootstrap
-import com.github.avbox.osc.api.BootGeneration
+import com.github.VVbox.osc.api.AppBootstrap
+import com.github.VVbox.osc.api.BootGeneration
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking

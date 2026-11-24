@@ -1,6 +1,6 @@
-package com.github.avbox.osc.player.effect
+package com.github.VVbox.osc.player.effect
 
-import com.github.avbox.osc.player.core.RedrawPolicy
+import com.github.VVbox.osc.player.core.RedrawPolicy
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test

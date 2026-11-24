@@ -1,4 +1,4 @@
-package com.github.avbox.osc.player.engine
+package com.github.VVbox.osc.player.engine
 
 import androidx.media3.common.C
 import androidx.media3.exoplayer.upstream.DefaultLoadErrorHandlingPolicy

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AVBox</string>
+    <string name="app_name">V影视</string>
 
     <string name="settings_language">语言</string>
     <string name="settings_group_language_layout">语言与布局</string>
@@ -111,7 +111,7 @@
     <string name="search_no_result">「%1$s」暂无搜索结果</string>
 
     <string name="cast_title">投屏到设备</string>
-    <string name="cast_hint">确认电视/盒子已安装AVBox或已打开DLNA投屏\n电视/盒子与手机连接在同一Wi-Fi下</string>
+    <string name="cast_hint">确认电视/盒子已安装V影视或已打开DLNA投屏\n电视/盒子与手机连接在同一Wi-Fi下</string>
     <string name="cast_permission_hint">需要允许「附近的设备」权限才能搜索投屏设备\n开启后点「刷新」重试</string>
     <string name="cast_searching">正在搜索设备...</string>
     <string name="cast_no_device">未找到可用设备</string>
@@ -481,7 +481,7 @@
     <string name="settings_about">关于</string>
     <string name="settings_about_subtitle">查看详细信息</string>
     <string name="settings_about_version">版本 v%1$s</string>
-    <string name="settings_about_disclaimer">本软件只提供聚合展示功能，所有资源均来自互联网，软件不参与任何内置、制作、上传、储存、下载等内容，也不接受任何捐赠、打赏、付费等谋利行为，软件仅供开源学习参考，请于安装后24小时内删除。\n\n打包分发请保留出处\nhttps://github.com/CatVodTVOfficial/TVBoxOSC\nhttps://github.com/q215613905/TVBoxOS</string>
+    <string name="settings_about_disclaimer">本软件基于axbox二开，只提供聚合展示功能，所有资源均来自互联网，软件不参与任何内置、制作、上传、储存、下载等内容，也不接受任何捐赠、打赏、付费等谋利行为，软件仅供开源学习参考，请于安装后24小时内删除。\n\n打包分发请保留出处\nhttps://github.com/CatVodTVOfficial/TVBoxOSC\nhttps://github.com/q215613905/TVBoxOS\nhttps://github.com/XiaochangXu/AVBox\nhttps://github.com/wade0132/Vbox</string>
     <string name="settings_github">访问 GitHub 仓库</string>
     <string name="settings_github_subtitle">访问项目源代码仓库</string>
     <string name="settings_app_tagline">一款开源的视频播放器</string>
@@ -497,7 +497,6 @@
     <string name="settings_nav_animation_disable">禁用导航动画</string>
     <string name="settings_nav_live_hidden">导航栏隐藏直播</string>
     <string name="settings_auto_switch_line">自动换线</string>
-    <string name="settings_m3u8_purify">M3U8 净化</string>
     <string name="settings_danmu_switch">弹幕开关</string>
     <string name="settings_danmu_api">弹幕 API</string>
     <string name="settings_long_press_speed">长按倍速</string>
@@ -634,4 +633,46 @@
     <string name="osd_tunnel">隧道</string>
     <string name="osd_preload">预载</string>
     <string name="osd_cache">缓存</string>
+    <string name="settings_nutstore_sync">坚果云观影同步</string>
+    <string name="settings_nutstore_sync_subtitle">多设备同步观看历史与播放进度</string>
+    <string name="nutstore_sync_title">坚果云观影同步</string>
+    <string name="nutstore_sync_hint">在每台设备上填写相同的坚果云账号与应用密码，即可同步观看记录和播放进度。应用密码可在坚果云「安全选项 → 第三方应用管理」中生成。</string>
+    <string name="nutstore_sync_group_basic">同步开关</string>
+    <string name="nutstore_sync_enable">开启观影记录同步</string>
+    <string name="nutstore_sync_enable_sub">关闭后不再上传或下载记录</string>
+    <string name="nutstore_sync_auto">自动同步</string>
+    <string name="nutstore_sync_auto_sub">每隔一段时间在后台同步</string>
+    <string name="nutstore_sync_on_open">打开应用时同步</string>
+    <string name="nutstore_sync_on_open_sub">启动后在后台自动同步一次云端记录</string>
+    <string name="nutstore_sync_group_account">坚果云账号</string>
+    <string name="nutstore_sync_server">WebDAV 地址</string>
+    <string name="nutstore_sync_server_hint">https://dav.jianguoyun.com/dav/</string>
+    <string name="nutstore_sync_username">账号邮箱</string>
+    <string name="nutstore_sync_username_hint">you@example.com</string>
+    <string name="nutstore_sync_password">应用密码</string>
+    <string name="nutstore_sync_password_hint">第三方应用密码，非登录密码</string>
+    <string name="nutstore_sync_folder">同步目录</string>
+    <string name="nutstore_sync_folder_hint">AVBox</string>
+    <string name="nutstore_sync_now">立即同步</string>
+    <string name="nutstore_sync_idle">尚未同步</string>
+    <string name="nutstore_sync_success">已同步 %1$d 条观影记录</string>
+    <string name="nutstore_sync_auto_never">尚未自动同步</string>
+    <string name="nutstore_sync_auto_status">上次自动同步：%1$s · %2$s</string>
+    <string name="nutstore_sync_auto_pending">上次同步未完成，将在联网或再次打开应用时自动重试</string>
+    <string name="nutstore_sync_auto_failed">同步失败</string>
+    <string name="nutstore_sync_group_danger">云端记录管理</string>
+    <string name="nutstore_sync_clear_cloud">清除云端全部观影记录</string>
+    <string name="nutstore_sync_clear_cloud_title">清除云端观影记录？</string>
+    <string name="nutstore_sync_clear_cloud_message">将删除坚果云同步目录中所有设备的观影记录文件；本机记录不会被删除。若开启自动同步，本机记录之后可能重新上传。</string>
+    <string name="nutstore_sync_group_config">配置备份与恢复</string>
+    <string name="nutstore_sync_config_hint">可备份 App 设置、点播、直播、TMDB 配置到云端；在新设备上一键恢复。同步账号密码不会上传。</string>
+    <string name="nutstore_sync_config_backup">备份配置到云端</string>
+    <string name="nutstore_sync_config_restore">从云端恢复配置</string>
+    <string name="nutstore_sync_config_restore_title">从云端恢复配置？</string>
+    <string name="nutstore_sync_config_restore_message">云端配置会覆盖本机同名设置，恢复后需要重启应用才能全部生效。观影记录不受影响。</string>
+    <string name="nutstore_sync_config_clear">清除云端配置备份</string>
+    <string name="nutstore_sync_config_clear_title">清除云端配置？</string>
+    <string name="nutstore_sync_config_clear_message">仅删除云端的配置备份文件，本机设置保持不变。</string>
+    <string name="nutstore_sync_config_restart_title">配置已恢复</string>
+    <string name="nutstore_sync_config_restart_message">部分设置需要重启应用才能生效，是否立即重启？</string>
 </resources>

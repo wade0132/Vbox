@@ -1,6 +1,6 @@
-package com.github.avbox.osc.net
+package com.github.VVbox.osc.net
 
-import com.github.avbox.osc.bean.SourceBean
+import com.github.VVbox.osc.bean.SourceBean
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 坚果云同步入口：单色矢量图标，运行时由 SettingsIconBadge 按主题色着色 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- 云朵轮廓 -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M6.8,18.4 L17.2,18.4 C19.0,18.4 20.3,17.1 20.3,15.4 C20.3,13.8 19.2,12.6 17.7,12.4 C17.3,9.4 14.8,7.2 11.7,7.2 C9.4,7.2 7.4,8.5 6.5,10.4 C5.1,10.7 4.1,11.9 4.1,13.4 C4.1,15.2 5.4,16.5 7.1,16.6"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="1.6" />
+
+    <!-- 坚果主体 -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M13.5,9.7 C15.6,9.7 17.2,11.6 17.2,14 C17.2,16.3 15.6,18 13.5,18 C11.4,18 9.8,16.3 9.8,14 C9.8,11.6 11.4,9.7 13.5,9.7 Z" />
+
+    <!-- 坚果盖子分界，用同色描边区分层次 -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M10.2,11.8 C11.6,10.8 13.4,10.4 15.3,10.8 C16.1,11.0 16.8,11.3 17.2,11.7"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeWidth="1.1" />
+</vector>

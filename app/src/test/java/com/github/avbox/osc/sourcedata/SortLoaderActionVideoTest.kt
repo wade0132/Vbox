@@ -1,6 +1,6 @@
-package com.github.avbox.osc.sourcedata
+package com.github.VVbox.osc.sourcedata
 
-import com.github.avbox.osc.bean.Movie
+import com.github.VVbox.osc.bean.Movie
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test

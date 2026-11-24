@@ -1,4 +1,4 @@
-package com.github.avbox.osc.boot
+package com.github.VVbox.osc.boot
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -185,9 +185,9 @@ class BootGuardTest {
     fun uiCrashIsNotSourceRelated() {
         val crash = crashWith(
             frame("java.util.ArrayList\$Itr", "checkForComodification"),
-            frame("com.github.avbox.osc.ui.page.SettingsPageKt", "SettingsPage\$lambda\$6\$0\$1\$3"),
+            frame("com.github.VVbox.osc.ui.page.SettingsPageKt", "SettingsPage\$lambda\$6\$0\$1\$3"),
             frame("androidx.compose.runtime.internal.ComposableLambdaImpl", "invoke"),
-            frame("com.github.avbox.osc.ui.components.SettingsGroupKt", "SettingsCard"),
+            frame("com.github.VVbox.osc.ui.components.SettingsGroupKt", "SettingsCard"),
             frame("androidx.compose.runtime.Recomposer", "performRecompose"),
             frame("androidx.compose.ui.platform.AndroidUiFrameClock\$withFrameNanos\$2\$callback\$1", "doFrame"),
             frame("android.view.Choreographer\$CallbackRecord", "run"),
@@ -215,7 +215,7 @@ class BootGuardTest {
     fun uiStackWithSpiderFrameIsStillSourceRelated() {
         val crash = crashWith(
             frame("androidx.compose.runtime.Recomposer", "run"),
-            frame("com.github.avbox.osc.ui.page.SettingsPageKt", "SettingsPage"),
+            frame("com.github.VVbox.osc.ui.page.SettingsPageKt", "SettingsPage"),
             frame("com.github.catvod.spider.GoProxy", "<clinit>"),
             frame("com.android.internal.os.RuntimeInit", "main"),
         )
@@ -239,7 +239,7 @@ class BootGuardTest {
             "wrapped",
             inner,
         ).apply {
-            stackTrace = arrayOf(frame("com.github.avbox.osc.ui.page.HomeViewModel", "loadHome"))
+            stackTrace = arrayOf(frame("com.github.VVbox.osc.ui.page.HomeViewModel", "loadHome"))
         }
         assertTrue(BootGuard.looksSourceRelated(outer))
     }
@@ -256,14 +256,14 @@ class BootGuardTest {
     fun hostOnlyCrashIsNotSourceRelated() {
         val utilCrash = crashWith(
             frame("java.lang.NoSuchMethodError", "<init>"),
-            frame("com.github.avbox.osc.util.FileUtils", "copyFile"),
-            frame("com.github.avbox.osc.api.ApiConfig", "loadConfig"),
-            frame("com.github.avbox.osc.sourcedata.SourceHelper", "fillSource"),
+            frame("com.github.VVbox.osc.util.FileUtils", "copyFile"),
+            frame("com.github.VVbox.osc.api.ApiConfig", "loadConfig"),
+            frame("com.github.VVbox.osc.sourcedata.SourceHelper", "fillSource"),
             frame("com.android.internal.os.RuntimeInit", "main"),
         )
         assertFalse(BootGuard.looksSourceRelated(utilCrash))
         val playerCrash = crashWith(
-            frame("com.github.avbox.osc.player.PlaybackEngine", "onPlayerError"),
+            frame("com.github.VVbox.osc.player.PlaybackEngine", "onPlayerError"),
             frame("android.os.Handler", "dispatchMessage"),
             frame("com.android.internal.os.RuntimeInit", "main"),
         )

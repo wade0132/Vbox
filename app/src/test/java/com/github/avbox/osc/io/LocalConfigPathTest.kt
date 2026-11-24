@@ -1,4 +1,4 @@
-package com.github.avbox.osc.io
+package com.github.VVbox.osc.io
 
 import java.io.File
 import java.nio.file.Files
@@ -19,15 +19,15 @@ class LocalConfigPathTest {
             toClanApi("$root/Download/tvbox.json", root),
         )
         assertEquals(
-            "clan://localhost/Android/data/com.github.avbox.osc/cache/config/tvbox.json",
-            toClanApi("$root/Android/data/com.github.avbox.osc/cache/config/tvbox.json", root),
+            "clan://localhost/Android/data/com.github.VVbox.osc/cache/config/tvbox.json",
+            toClanApi("$root/Android/data/com.github.VVbox.osc/cache/config/tvbox.json", root),
         )
     }
 
     @Test
     fun pathOutsideStorageRootMustFallBackToCopy() {
         assertNull(toClanApi("/storage/ABCD-1234/tvbox.json", root))
-        assertNull(toClanApi("/data/user/0/com.github.avbox.osc/cache/config/tvbox.json", root))
+        assertNull(toClanApi("/data/user/0/com.github.VVbox.osc/cache/config/tvbox.json", root))
         assertNull(toClanApi(null, root))
         assertNull(toClanApi("", root))
     }
@@ -73,7 +73,7 @@ class LocalConfigPathTest {
         assertTrue(isUngrantableDir("$root/", root))
         assertTrue(isUngrantableDir("$root/Download", root))
         assertTrue(isUngrantableDir("$root/Android/data", root))
-        assertTrue(isUngrantableDir("$root/Android/data/com.github.avbox.osc/files", root))
+        assertTrue(isUngrantableDir("$root/Android/data/com.github.VVbox.osc/files", root))
         assertTrue(isUngrantableDir("$root/Android/obb", root))
         assertTrue(isUngrantableDir("/storage/ABCD-1234", root))
     }

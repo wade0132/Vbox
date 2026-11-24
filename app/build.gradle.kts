@@ -8,16 +8,16 @@ plugins {
 }
 
 android {
-    namespace = "com.github.avbox.osc"
+    namespace = "com.github.VVbox.osc"
     compileSdk = libs.versions.compileSdk.get().toInt()
     ndkVersion = libs.versions.ndk.get()
 
     defaultConfig {
-        applicationId = "com.github.avbox.osc"
+        applicationId = "com.github.VVbox.osc"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
-        versionCode = 34
-        versionName = "1.3.0"
+        versionCode = 44
+        versionName = "1.4.0"
         multiDexEnabled = true
         ndk {
             abiFilters += setOf("arm64-v8a")
@@ -25,11 +25,16 @@ android {
     }
 
     packaging {
+        // 压缩 native so（对齐官方 release 包，显著减小体积）
         jniLibs {
-            useLegacyPackaging = true
+            useLegacyPackaging = false
         }
         resources {
-            excludes += setOf("META-INF/DEPENDENCIES", "META-INF/beans.xml")
+            excludes += setOf(
+                "META-INF/DEPENDENCIES", "META-INF/beans.xml",
+                "META-INF/*.kotlin_module", "META-INF/LICENSE*", "META-INF/NOTICE*",
+                "META-INF/ASL2.0", "DebugProbesKt.bin",
+            )
         }
     }
 
@@ -58,7 +63,16 @@ android {
 
     buildTypes {
         debug {
-            isMinifyEnabled = false
+            // 关闭 debuggable 让 R8 完整执行优化与混淆，显著减小包体并提升首页滑动流畅度。
+            // 仍使用 debug 签名，可直接覆盖安装。
+            isDebuggable = false
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro",
+                "proguard-python.pro",
+            )
         }
         release {
             isMinifyEnabled = true

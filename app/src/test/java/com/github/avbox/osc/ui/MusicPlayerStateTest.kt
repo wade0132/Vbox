@@ -1,9 +1,9 @@
-package com.github.avbox.osc.ui
+package com.github.VVbox.osc.ui
 
-import com.github.avbox.osc.player.core.PlayState
-import com.github.avbox.osc.ui.music.LyricLine
-import com.github.avbox.osc.ui.music.MusicPlayMode
-import com.github.avbox.osc.ui.music.MusicPlayerState
+import com.github.VVbox.osc.player.core.PlayState
+import com.github.VVbox.osc.ui.music.LyricLine
+import com.github.VVbox.osc.ui.music.MusicPlayMode
+import com.github.VVbox.osc.ui.music.MusicPlayerState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull

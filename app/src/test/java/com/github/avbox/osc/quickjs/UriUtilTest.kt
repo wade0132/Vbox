@@ -1,4 +1,4 @@
-package com.github.avbox.osc.quickjs
+package com.github.VVbox.osc.quickjs
 
 import com.whl.quickjs.wrapper.UriUtil
 import org.junit.Assert.assertEquals

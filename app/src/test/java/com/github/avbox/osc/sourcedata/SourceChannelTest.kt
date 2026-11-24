@@ -1,4 +1,4 @@
-package com.github.avbox.osc.sourcedata
+package com.github.VVbox.osc.sourcedata
 
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.first

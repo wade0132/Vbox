@@ -1,4 +1,4 @@
-package com.github.avbox.osc.util
+package com.github.VVbox.osc.util
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

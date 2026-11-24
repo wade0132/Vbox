@@ -1,7 +1,7 @@
-package com.github.avbox.osc.api
+package com.github.VVbox.osc.api
 
-import com.github.avbox.osc.bean.LiveSettingItem
-import com.github.avbox.osc.bean.SourceBean
+import com.github.VVbox.osc.bean.LiveSettingItem
+import com.github.VVbox.osc.bean.SourceBean
 import com.google.gson.Gson
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject

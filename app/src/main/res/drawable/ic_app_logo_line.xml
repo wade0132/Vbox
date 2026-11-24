@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 应用内线条风 logo：用于「我的」页顶部徽标与首页订阅胶囊。
+     单色描边，不填充，保证 tint 后仍是清晰的线条，不会糊成一团。 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="960"
+    android:viewportHeight="960">
+    <group
+        android:pivotX="480"
+        android:pivotY="480"
+        android:scaleX="0.85"
+        android:scaleY="0.85">
+
+        <!-- 爆米花云朵轮廓 -->
+        <path
+            android:pathData="M240,305 C205,305 190,265 215,238 C205,195 245,165 285,180 C305,130 375,110 420,145 C465,105 545,115 570,160 C625,145 675,180 675,230 C710,255 700,305 665,305 Z"
+            android:strokeColor="@color/logo_line_color"
+            android:strokeWidth="40"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:fillColor="@android:color/transparent" />
+
+        <!-- 爆米花桶轮廓（上沿由云朵底边提供） -->
+        <path
+            android:pathData="M275,305 L330,760 L630,760 L685,305"
+            android:strokeColor="@color/logo_line_color"
+            android:strokeWidth="40"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:fillColor="@android:color/transparent" />
+
+        <!-- 字母 V -->
+        <path
+            android:pathData="M370,395 L480,655 L590,395"
+            android:strokeColor="@color/logo_line_color"
+            android:strokeWidth="58"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:fillColor="@android:color/transparent" />
+
+        <!-- 胶片卷外圈 -->
+        <path
+            android:pathData="M690,545 A135,135 0 1,1 689.9,545 Z"
+            android:strokeColor="@color/logo_line_color"
+            android:strokeWidth="38"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:fillColor="@android:color/transparent" />
+
+        <!-- 胶片卷 5 个孔 + 中心孔 -->
+        <path
+            android:pathData="M690,590 A20,20 0 1,1 689.9,590 Z M761,657 A20,20 0 1,1 760.9,657 Z M734,741 A20,20 0 1,1 733.9,741 Z M646,741 A20,20 0 1,1 645.9,741 Z M619,657 A20,20 0 1,1 618.9,657 Z M690,666 A14,14 0 1,1 689.9,666 Z"
+            android:fillColor="@color/logo_line_color" />
+    </group>
+</vector>

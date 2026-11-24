@@ -1,6 +1,6 @@
-package com.github.avbox.osc.sourcedata
+package com.github.VVbox.osc.sourcedata
 
-import com.github.avbox.osc.bean.AbsSortXml
+import com.github.VVbox.osc.bean.AbsSortXml
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertSame

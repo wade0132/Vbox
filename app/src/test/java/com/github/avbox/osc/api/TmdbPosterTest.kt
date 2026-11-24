@@ -1,6 +1,6 @@
-package com.github.avbox.osc.api
+package com.github.VVbox.osc.api
 
-import com.github.avbox.osc.bean.TmdbSearchHit
+import com.github.VVbox.osc.bean.TmdbSearchHit
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue

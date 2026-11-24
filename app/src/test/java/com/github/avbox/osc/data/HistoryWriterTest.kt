@@ -1,6 +1,6 @@
-package com.github.avbox.osc.data
+package com.github.VVbox.osc.data
 
-import com.github.avbox.osc.bean.VodInfo
+import com.github.VVbox.osc.bean.VodInfo
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

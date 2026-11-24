@@ -1,7 +1,7 @@
-package com.github.avbox.osc.sourcedata
+package com.github.VVbox.osc.sourcedata
 
-import com.github.avbox.osc.bean.AbsXml
-import com.github.avbox.osc.ui.DetailResponseGuard
+import com.github.VVbox.osc.bean.AbsXml
+import com.github.VVbox.osc.ui.DetailResponseGuard
 import com.google.gson.Gson
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking

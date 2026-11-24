@@ -1,9 +1,9 @@
-package com.github.avbox.osc.player.state
+package com.github.VVbox.osc.player.state
 
-import com.github.avbox.osc.bean.CastVideo
-import com.github.avbox.osc.player.effect.PictureEffectUnavailableReason
-import com.github.avbox.osc.player.effect.PicturePreset
-import com.github.avbox.osc.player.effect.PictureProfile
+import com.github.VVbox.osc.bean.CastVideo
+import com.github.VVbox.osc.player.effect.PictureEffectUnavailableReason
+import com.github.VVbox.osc.player.effect.PicturePreset
+import com.github.VVbox.osc.player.effect.PictureProfile
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull

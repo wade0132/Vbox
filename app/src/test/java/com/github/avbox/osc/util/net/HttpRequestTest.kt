@@ -1,4 +1,4 @@
-package com.github.avbox.osc.util.net
+package com.github.VVbox.osc.util.net
 
 import okhttp3.OkHttp
 import okhttp3.Request

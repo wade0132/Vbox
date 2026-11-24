@@ -1,4 +1,4 @@
-package com.github.avbox.osc.ui.player
+package com.github.VVbox.osc.ui.player
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -18,8 +18,8 @@ import androidx.compose.ui.test.up
 import androidx.compose.ui.unit.dp
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import com.github.avbox.osc.ui.ComposeTestActivity
-import com.github.avbox.osc.testing.TestApplication
+import com.github.VVbox.osc.ui.ComposeTestActivity
+import com.github.VVbox.osc.testing.TestApplication
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Rule

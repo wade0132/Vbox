@@ -1,4 +1,4 @@
-package com.github.avbox.osc.player.host
+package com.github.VVbox.osc.player.host
 
 import android.media.AudioManager
 import org.junit.Assert.assertEquals

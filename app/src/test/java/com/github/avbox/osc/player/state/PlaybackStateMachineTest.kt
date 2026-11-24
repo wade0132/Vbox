@@ -1,7 +1,7 @@
-package com.github.avbox.osc.player.state
+package com.github.VVbox.osc.player.state
 
-import com.github.avbox.osc.player.core.PlayState
-import com.github.avbox.osc.player.core.PlaybackStateMachine
+import com.github.VVbox.osc.player.core.PlayState
+import com.github.VVbox.osc.player.core.PlaybackStateMachine
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

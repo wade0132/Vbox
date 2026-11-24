@@ -1,4 +1,4 @@
-package com.github.avbox.osc.ui.components
+package com.github.VVbox.osc.ui.components
 
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull

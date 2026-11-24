@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AVBox</string>
+    <string name="app_name">V影视</string>
 
     <string name="settings_language">Language</string>
     <string name="settings_group_language_layout">Language &amp; Layout</string>
@@ -111,7 +111,7 @@
     <string name="search_no_result">No results for “%1$s”</string>
 
     <string name="cast_title">Cast to Device</string>
-    <string name="cast_hint">Make sure the TV/box has AVBox installed or DLNA casting enabled\nThe TV/box and the phone are connected to the same Wi-Fi</string>
+    <string name="cast_hint">Make sure the TV/box has V影视 installed or DLNA casting enabled\nThe TV/box and the phone are connected to the same Wi-Fi</string>
     <string name="cast_permission_hint">Allow the “Nearby devices” permission to search for cast devices\nAfter enabling it, tap “Refresh” to retry</string>
     <string name="cast_searching">Searching for devices…</string>
     <string name="cast_no_device">No devices found</string>
@@ -481,7 +481,7 @@
     <string name="settings_about">About</string>
     <string name="settings_about_subtitle">View details</string>
     <string name="settings_about_version">Version v%1$s</string>
-    <string name="settings_about_disclaimer">This app only aggregates and displays content from the internet. It does not host, create, upload, store, or download any content, and accepts no donations, tips, or payments. It is provided for open-source learning purposes only; please uninstall it within 24 hours of installation.\n\nKeep the credits when redistributing\nhttps://github.com/CatVodTVOfficial/TVBoxOSC\nhttps://github.com/q215613905/TVBoxOS</string>
+    <string name="settings_about_disclaimer">This app is a fork of axbox and only aggregates and displays content from the internet. It does not host, create, upload, store, or download any content, and accepts no donations, tips, or payments. It is provided for open-source learning purposes only; please uninstall it within 24 hours of installation.\n\nKeep the credits when redistributing\nhttps://github.com/CatVodTVOfficial/TVBoxOSC\nhttps://github.com/q215613905/TVBoxOS\nhttps://github.com/XiaochangXu/AVBox\nhttps://github.com/wade0132/Vbox</string>
     <string name="settings_github">Visit GitHub Repository</string>
     <string name="settings_github_subtitle">Open the project source repository</string>
     <string name="settings_app_tagline">Open-source video player</string>
@@ -497,7 +497,6 @@
     <string name="settings_nav_animation_disable">Disable Navigation Animation</string>
     <string name="settings_nav_live_hidden">Hide Live in Navigation Bar</string>
     <string name="settings_auto_switch_line">Auto Switch Line</string>
-    <string name="settings_m3u8_purify">M3U8 Purify</string>
     <string name="settings_danmu_switch">Danmaku Switch</string>
     <string name="settings_danmu_api">Danmaku API</string>
     <string name="settings_long_press_speed">Long-press Speed</string>
@@ -634,4 +633,46 @@
     <string name="osd_tunnel">Tunnel</string>
     <string name="osd_preload">Preload</string>
     <string name="osd_cache">Cache</string>
+    <string name="settings_nutstore_sync">Nutstore Sync</string>
+    <string name="settings_nutstore_sync_subtitle">Sync watch history and playback across devices</string>
+    <string name="nutstore_sync_title">Nutstore Sync</string>
+    <string name="nutstore_sync_hint">Enter the same Nutstore account and app password on every device to sync watch history and playback. Generate an app password under Security -&gt; Third-party apps.</string>
+    <string name="nutstore_sync_group_basic">Sync switches</string>
+    <string name="nutstore_sync_enable">Enable history sync</string>
+    <string name="nutstore_sync_enable_sub">When off, nothing is uploaded or downloaded</string>
+    <string name="nutstore_sync_auto">Auto sync</string>
+    <string name="nutstore_sync_auto_sub">Sync in the background at a set interval</string>
+    <string name="nutstore_sync_on_open">Sync on app launch</string>
+    <string name="nutstore_sync_on_open_sub">Sync cloud records once in the background after launch</string>
+    <string name="nutstore_sync_group_account">Nutstore account</string>
+    <string name="nutstore_sync_server">WebDAV URL</string>
+    <string name="nutstore_sync_server_hint">https://dav.jianguoyun.com/dav/</string>
+    <string name="nutstore_sync_username">Account email</string>
+    <string name="nutstore_sync_username_hint">you@example.com</string>
+    <string name="nutstore_sync_password">App password</string>
+    <string name="nutstore_sync_password_hint">Third-party app password, not your login password</string>
+    <string name="nutstore_sync_folder">Sync folder</string>
+    <string name="nutstore_sync_folder_hint">AVBox</string>
+    <string name="nutstore_sync_now">Sync now</string>
+    <string name="nutstore_sync_idle">Not synced yet</string>
+    <string name="nutstore_sync_success">Synced %1$d records</string>
+    <string name="nutstore_sync_auto_never">No automatic sync yet</string>
+    <string name="nutstore_sync_auto_status">Last auto sync: %1$s · %2$s</string>
+    <string name="nutstore_sync_auto_pending">Last sync unfinished; will retry when network returns or app reopens</string>
+    <string name="nutstore_sync_auto_failed">Sync failed</string>
+    <string name="nutstore_sync_group_danger">Cloud record management</string>
+    <string name="nutstore_sync_clear_cloud">Clear all cloud records</string>
+    <string name="nutstore_sync_clear_cloud_title">Clear cloud records?</string>
+    <string name="nutstore_sync_clear_cloud_message">Deletes all watch-record files of every device from the Nutstore sync folder. Local records are kept. If auto sync is on, local records may be uploaded again.</string>
+    <string name="nutstore_sync_group_config">Config backup &amp; restore</string>
+    <string name="nutstore_sync_config_hint">Back up app settings, VOD, live TV and TMDB configs to the cloud, then restore them on a new device in one tap. Your sync credentials are never uploaded.</string>
+    <string name="nutstore_sync_config_backup">Back up config to cloud</string>
+    <string name="nutstore_sync_config_restore">Restore config from cloud</string>
+    <string name="nutstore_sync_config_restore_title">Restore config from cloud?</string>
+    <string name="nutstore_sync_config_restore_message">Cloud settings will overwrite local ones with the same key. A restart is required for all changes to take effect. Watch history is not affected.</string>
+    <string name="nutstore_sync_config_clear">Clear cloud config backup</string>
+    <string name="nutstore_sync_config_clear_title">Clear cloud config?</string>
+    <string name="nutstore_sync_config_clear_message">Only the cloud config backup file is deleted. Local settings are kept.</string>
+    <string name="nutstore_sync_config_restart_title">Config restored</string>
+    <string name="nutstore_sync_config_restart_message">Some settings need a restart to take effect. Restart now?</string>
 </resources>

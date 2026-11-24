@@ -1,7 +1,7 @@
-package com.github.avbox.osc.ui
+package com.github.VVbox.osc.ui
 
-import com.github.avbox.osc.bean.LiveChannelGroup
-import com.github.avbox.osc.bean.LiveChannelItem
+import com.github.VVbox.osc.bean.LiveChannelGroup
+import com.github.VVbox.osc.bean.LiveChannelItem
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test

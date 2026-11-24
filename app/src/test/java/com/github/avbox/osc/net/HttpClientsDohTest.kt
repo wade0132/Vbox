@@ -1,4 +1,4 @@
-package com.github.avbox.osc.net
+package com.github.VVbox.osc.net
 
 import com.google.gson.JsonArray
 import com.google.gson.JsonParser

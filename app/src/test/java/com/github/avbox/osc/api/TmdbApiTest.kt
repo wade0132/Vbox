@@ -1,9 +1,9 @@
-package com.github.avbox.osc.api
+package com.github.VVbox.osc.api
 
-import com.github.avbox.osc.bean.TmdbEpisodeRef
-import com.github.avbox.osc.bean.TmdbSearchHit
-import com.github.avbox.osc.bean.TmdbSeason
-import com.github.avbox.osc.util.TmdbImages
+import com.github.VVbox.osc.bean.TmdbEpisodeRef
+import com.github.VVbox.osc.bean.TmdbSearchHit
+import com.github.VVbox.osc.bean.TmdbSeason
+import com.github.VVbox.osc.util.TmdbImages
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertNull

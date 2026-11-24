@@ -1,4 +1,4 @@
-package com.github.avbox.osc.player.engine.iso
+package com.github.VVbox.osc.player.engine.iso
 
 import android.net.Uri
 import androidx.media3.common.C

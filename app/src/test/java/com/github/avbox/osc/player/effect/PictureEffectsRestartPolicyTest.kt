@@ -1,4 +1,4 @@
-package com.github.avbox.osc.player.effect
+package com.github.VVbox.osc.player.effect
 
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

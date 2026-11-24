@@ -1,6 +1,6 @@
-package com.github.avbox.osc.player.controller
+package com.github.VVbox.osc.player.controller
 
-import com.github.avbox.osc.player.BasePlayerView
+import com.github.VVbox.osc.player.BasePlayerView
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

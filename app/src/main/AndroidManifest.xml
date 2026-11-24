@@ -105,6 +105,8 @@
             android:name=".ui.PlaySettingsActivity" />
         <activity
             android:name=".ui.PreferenceSettingsActivity" />
+        <activity
+            android:name=".ui.NutstoreSyncActivity" />
 
         <service
             android:name=".dlna.DLNACastService"

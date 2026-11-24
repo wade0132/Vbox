@@ -1,9 +1,9 @@
-package com.github.avbox.osc.player.engine
+package com.github.VVbox.osc.player.engine
 
 import android.os.Bundle
 import androidx.media3.common.ColorInfo
 import androidx.media3.common.PlaybackException
-import com.github.avbox.osc.player.core.CodecPreferences
+import com.github.VVbox.osc.player.core.CodecPreferences
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

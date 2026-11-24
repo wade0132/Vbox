@@ -1,8 +1,8 @@
-package com.github.avbox.osc.sourcedata
+package com.github.VVbox.osc.sourcedata
 
-import com.github.avbox.osc.bean.AbsXml
-import com.github.avbox.osc.bean.Movie
-import com.github.avbox.osc.util.MD5
+import com.github.VVbox.osc.bean.AbsXml
+import com.github.VVbox.osc.bean.Movie
+import com.github.VVbox.osc.util.MD5
 import com.google.gson.Gson
 import org.junit.Assert.assertEquals
 import org.junit.Test

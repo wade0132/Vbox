@@ -1,4 +1,4 @@
-package com.github.avbox.osc.testing
+package com.github.VVbox.osc.testing
 
 import android.app.Application
 

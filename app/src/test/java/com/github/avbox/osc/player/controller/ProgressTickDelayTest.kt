@@ -1,4 +1,4 @@
-package com.github.avbox.osc.player.controller
+package com.github.VVbox.osc.player.controller
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

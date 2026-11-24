@@ -1,6 +1,6 @@
-package com.github.avbox.osc.player.effect
+package com.github.VVbox.osc.player.effect
 
-import com.github.avbox.osc.player.effect.anime4k.Anime4kEffect
+import com.github.VVbox.osc.player.effect.anime4k.Anime4kEffect
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
