@@ -3,28 +3,32 @@
 </div>
 
 <div align="center">
-  <img src="images/vbox-icon.png" width="120" alt="V影视"/>
+  <img src="images/weiying-icon.png" width="120" alt="微影"/>
   <br/>
 
-# V影视
+# 微影
 
 **基于 AVBox 二次开发的开源 Android 影视播放器框架**
 
-版本 `1.4.0` · 包名 `com.github.VVbox.osc` · Android 7.0+（`arm64-v8a`）· [AGPL-3.0](LICENSE)
+版本 `1.5` · 包名 `com.github.vying.osc` · Android 7.0+（`arm64-v8a`）· [AGPL-3.0](LICENSE)
 
-[下载安装包](https://github.com/wade0132/Vbox/releases/tag/v1.4.0) · [提交 Issue](https://github.com/wade0132/Vbox/issues) · [上游项目 AVBox](https://github.com/XiaochangXu/AVBox)
+[下载安装包](https://github.com/wade0132/Vbox/releases) · [提交 Issue](https://github.com/wade0132/Vbox/issues) · [上游项目 AVBox](https://github.com/XiaochangXu/AVBox)
 </div>
 
 > 本软件仅提供播放界面、源配置管理与本地播放能力，默认**不预置、不内置、不提供**任何影视内容、直播频道、节目单或第三方解析接口。使用前请阅读文末的[免责声明与用户协议](#免责声明与用户协议)。
 
 ## 项目简介
 
-V影视 是在 [AVBox](https://github.com/XiaochangXu/AVBox) v1.4.0 基础上二次开发的 Android 播放器框架，保留上游的点播、直播、TMDB 刮削与播放能力，并新增坚果云 WebDAV 多端同步与若干界面改进。
+微影 是在 [AVBox](https://github.com/XiaochangXu/AVBox) v1.4.0 基础上二次开发的 Android 播放器框架，保留上游的点播、直播、TMDB 刮削与播放能力，并新增坚果云 WebDAV 多端同步与若干界面改进。
 
-- 版本：versionName `1.4.0` / versionCode `44`
+- 版本：versionName `1.5` / versionCode `45`
+- 包名：`com.github.vying.osc`
 - 架构：`arm64-v8a`，Android 7.0+
-- 体积：开启 R8 代码与资源压缩后，安装包约 42.68 MB
+- 体积：启用 R8 压缩并以官方 1.4.0 底包重组后，安装包约 29.25 MB
+- 签名：沿用官方 release 证书（纯 v2 签名）
 - 源码：本仓库 `main` 分支即为二次开发后的完整可编译工程
+
+> **升级提示**：应用名与包名已由「V影视 / `com.github.VVbox.osc`」更改为「微影 / `com.github.vying.osc`」。包名变更意味着无法覆盖安装旧版本，请先卸载旧版再安装；观影记录可通过坚果云同步备份/恢复。
 
 ## 主要功能
 
@@ -47,20 +51,14 @@ V影视 是在 [AVBox](https://github.com/XiaochangXu/AVBox) v1.4.0 基础上二
 - 移除上游 1.3.0 起已废弃的 M3U8 净化功能（开关、文案、KV 键、播放分支与底层实现类全部清除）
 - 修复 UI 错位与网络 401 报错
 - 设置页 GitHub 仓库链接改为本项目，关于页免责声明改写为「基于 axbox 二开」并补充出处链接
-- 开启 R8 代码与资源压缩，安装包由约 53 MB 优化至 42.68 MB
+- 开启 R8 代码与资源压缩，并以官方 1.4.0 底包重组，安装包约 29.25 MB
+- 修复全屏播放时亮度/音量分区随机型横竖屏配置偏移的问题（小米 13 等手机横屏下左侧亮度区缩水）
 
 ## 下载与安装
 
-前往 [v1.4.0 Release](https://github.com/wade0132/Vbox/releases/tag/v1.4.0) 下载：
+前往 [Releases 页面](https://github.com/wade0132/Vbox/releases) 下载最新安装包（`arm64-v8a`，Android 7.0+）。Release 资产统一使用英文文件名（GitHub 不支持中文资产名），内容与本地同名文件逐字节一致。
 
-| 文件 | 说明 |
-| --- | --- |
-| `VVbox-1.4.0.apk` | 安装包，`arm64-v8a`，Android Debug 签名，可直接覆盖安装 |
-| `VVbox-1.4.0-source.zip` | 完整可编译工程源码（已排除 build 产物、SDK 与本地配置） |
-| `avbox-nutstore-sync.zip` | 坚果云同步模块独立源码 + 接入文档 `INTEGRATION.md` |
-| `VVbox-icon-preview.png` | 图标 / 启动图预览 |
-
-> GitHub Release 不支持中文资产名，故上传文件统一使用英文文件名，内容与本地同名文件逐字节一致。
+> 由于包名已变更，从旧版「V影视」升级时请先卸载旧应用；观影记录可通过坚果云同步备份与恢复。
 
 ## 从源码构建
 
@@ -98,7 +96,7 @@ V影视 是在 [AVBox](https://github.com/XiaochangXu/AVBox) v1.4.0 基础上二
 
 ## 一、软件性质
 
-1. V影视（基于 [AVBox](https://github.com/XiaochangXu/AVBox) 二次开发）是一款开源的视频播放器框架，仅提供播放界面、源配置管理和本地播放能力。
+1. 微影（基于 [AVBox](https://github.com/XiaochangXu/AVBox) 二次开发）是一款开源的视频播放器框架，仅提供播放界面、源配置管理和本地播放能力。
 2. 本软件默认状态下**不预置、不内置、不提供**任何影视内容、直播频道、节目单、订阅服务或第三方解析接口。
 3. 本软件开发者不参与任何内容的制作、上传、存储、分发或运营。
 
