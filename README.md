@@ -12,7 +12,7 @@
 
 版本 `1.5` · 包名 `com.github.vying.osc` · Android 7.0+（`arm64-v8a`）· [AGPL-3.0](LICENSE)
 
-[下载安装包](https://github.com/wade0132/Vbox/releases) · [提交 Issue](https://github.com/wade0132/Vbox/issues) · [上游项目 AVBox](https://github.com/XiaochangXu/AVBox)
+[下载安装包](https://github.com/wade0132/weiying/releases) · [提交 Issue](https://github.com/wade0132/weiying/issues) · [上游项目 AVBox](https://github.com/XiaochangXu/AVBox)
 </div>
 
 > 本软件仅提供播放界面、源配置管理与本地播放能力，默认**不预置、不内置、不提供**任何影视内容、直播频道、节目单或第三方解析接口。使用前请阅读文末的[免责声明与用户协议](#免责声明与用户协议)。
@@ -56,7 +56,7 @@
 
 ## 下载与安装
 
-前往 [Releases 页面](https://github.com/wade0132/Vbox/releases) 下载最新安装包（`arm64-v8a`，Android 7.0+）。Release 资产统一使用英文文件名（GitHub 不支持中文资产名），内容与本地同名文件逐字节一致。
+前往 [Releases 页面](https://github.com/wade0132/weiying/releases) 下载最新安装包（`arm64-v8a`，Android 7.0+）。Release 资产统一使用英文文件名（GitHub 不支持中文资产名），内容与本地同名文件逐字节一致。
 
 > 由于包名已变更，从旧版「V影视」升级时请先卸载旧应用；观影记录可通过坚果云同步备份与恢复。
 
@@ -156,6 +156,6 @@
 
 # 开源协议与致谢
 
-- 本项目：[wade0132/Vbox](https://github.com/wade0132/Vbox) · AGPL-3.0（详见 `LICENSE`）
+- 本项目：[wade0132/weiying](https://github.com/wade0132/weiying) · AGPL-3.0（详见 `LICENSE`）
 - 上游项目：[XiaochangXu/AVBox](https://github.com/XiaochangXu/AVBox) · [TVBoxOS](https://github.com/q215613905/TVBoxOS)
 - 基于本软件二次开发或分发须遵守 AGPL-3.0，保留原始版权声明与出处链接，并以相同许可证公开衍生作品源码。
