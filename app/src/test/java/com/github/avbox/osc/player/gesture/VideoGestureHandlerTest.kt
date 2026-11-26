@@ -466,4 +466,27 @@ class VideoGestureHandlerTest {
         assertTrue(h.onMove(300f, 1400f, slop = 8f))
         assertTrue(r.calls.any { it.startsWith("brightness") })
     }
+
+    @Test
+    fun landscapePhoneSplitUsesGestureContainerWidthNotDisplayMetrics() {
+        // 小米 13 横屏全屏：手势容器宽 2400px，但 displayMetrics.widthPixels 仍是竖屏 1080。
+        // 分区必须以容器宽度为准，否则分界线落在 540px（22.5%），左侧亮度区缩水一半。
+        val r = Recorder()
+        val h = VideoGestureHandler(r)
+        h.beginSession(session(width = 2400, height = 1080, screenWidth = 1080), 700f, 400f)
+        assertTrue(h.onMove(700f, 600f, slop = 8f))
+        assertTrue(
+            "x=700 属于左半边(0~1200)，应调亮度，不能因 screenWidth=1080 误判为音量",
+            r.calls.any { it.startsWith("brightness") },
+        )
+    }
+
+    @Test
+    fun rightHalfStillControlsVolumeOnLandscapePhone() {
+        val r = Recorder()
+        val h = VideoGestureHandler(r)
+        h.beginSession(session(width = 2400, height = 1080, screenWidth = 1080), 1800f, 400f)
+        assertTrue(h.onMove(1800f, 600f, slop = 8f))
+        assertTrue("右半边应调音量", r.calls.any { it.startsWith("volume") })
+    }
 }
