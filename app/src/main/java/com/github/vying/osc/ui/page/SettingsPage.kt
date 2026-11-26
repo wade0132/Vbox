@@ -350,6 +350,7 @@ fun SettingsPage(
 
 @Composable
 private fun AboutSheet(versionName: String, onDismiss: () -> Unit) {
+    val context = LocalContext.current
     AVBoxBottomSheet(
         onDismissRequest = onDismiss,
         title = stringResource(R.string.settings_about),
@@ -367,6 +368,15 @@ private fun AboutSheet(versionName: String, onDismiss: () -> Unit) {
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
+            }
+            Text(
+                text = stringResource(R.string.app_name) + " · " + GITHUB_REPO_URL.removePrefix("https://"),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.padding(top = 8.dp),
+            )
+            TextButton(onClick = { openExternalUrl(context, GITHUB_REPO_URL) }) {
+                Text(text = stringResource(R.string.settings_github))
             }
             Text(
                 text = stringResource(R.string.settings_about_disclaimer),
