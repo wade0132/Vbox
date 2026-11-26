@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.player.host
+package com.github.vying.osc.player.host
 
 import org.junit.Assert.assertArrayEquals
 import org.junit.Test

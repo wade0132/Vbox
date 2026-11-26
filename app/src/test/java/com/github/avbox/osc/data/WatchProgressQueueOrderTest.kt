@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.data
+package com.github.vying.osc.data
 
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope

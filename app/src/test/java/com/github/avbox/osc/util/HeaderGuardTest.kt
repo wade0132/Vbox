@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.util
+package com.github.vying.osc.util
 
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

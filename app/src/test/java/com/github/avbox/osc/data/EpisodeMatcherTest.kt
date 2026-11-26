@@ -1,6 +1,6 @@
-package com.github.VVbox.osc.data
+package com.github.vying.osc.data
 
-import com.github.VVbox.osc.bean.VodInfo
+import com.github.vying.osc.bean.VodInfo
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

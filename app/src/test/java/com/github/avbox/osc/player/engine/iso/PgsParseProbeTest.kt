@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.player.engine.iso
+package com.github.vying.osc.player.engine.iso
 
 import androidx.media3.common.util.ParsableByteArray
 import androidx.media3.extractor.text.CuesWithTiming

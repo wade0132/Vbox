@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.util
+package com.github.vying.osc.util
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
@@ -71,7 +71,7 @@ class PySourcePackTest {
 
     @Test
     fun packLocalJsKeepsClanApiAndDisablesFilter() {
-        val api = "clan://localhost/Android/data/com.github.VVbox.osc/files/config/ab12cd34/spider_ab12cd34.js"
+        val api = "clan://localhost/Android/data/com.github.vying.osc/files/config/ab12cd34/spider_ab12cd34.js"
         val json = PySourcePack.packLocalJs(api, "枫叶", "js_ab12cd34")
         assertEquals(
             "{\"sites\":[{\"key\":\"js_ab12cd34\",\"name\":\"枫叶\",\"type\":3," +

@@ -7,16 +7,16 @@ import android.util.Log
 
 import com.github.catvod.Proxy
 import com.github.catvod.net.OkHttp
-import com.github.VVbox.osc.io.FileUtils
-import com.github.VVbox.osc.server.ControlManager
-import com.github.VVbox.osc.server.RemoteServer
-import com.github.VVbox.osc.util.AppContextHolder
-import com.github.VVbox.osc.boot.BootGuard
-import com.github.VVbox.osc.util.AppLog
-import com.github.VVbox.osc.util.MD5
-import com.github.VVbox.osc.util.RegexUtils
-import com.github.VVbox.osc.util.SpiderInitWatch
-import com.github.VVbox.osc.util.net.Http
+import com.github.vying.osc.io.FileUtils
+import com.github.vying.osc.server.ControlManager
+import com.github.vying.osc.server.RemoteServer
+import com.github.vying.osc.util.AppContextHolder
+import com.github.vying.osc.boot.BootGuard
+import com.github.vying.osc.util.AppLog
+import com.github.vying.osc.util.MD5
+import com.github.vying.osc.util.RegexUtils
+import com.github.vying.osc.util.SpiderInitWatch
+import com.github.vying.osc.util.net.Http
 
 import org.json.JSONObject
 

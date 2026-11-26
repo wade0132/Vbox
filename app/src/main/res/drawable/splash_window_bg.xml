@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Android 12 以下启动窗口：淡色底 + 居中的图1 图标，与桌面图标保持一致 -->
+<!-- Android 12 以下启动窗口：淡色底 + 居中的矢量应用图标。
+     图形为 vector drawable（非位图），避免低分辨率放大导致发虚。 -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@color/splash_background" />
     <item
         android:width="160dp"
         android:height="160dp"
-        android:gravity="center">
-        <bitmap
-            android:src="@drawable/ic_app_icon"
-            android:gravity="fill" />
-    </item>
+        android:gravity="center"
+        android:drawable="@drawable/ic_app_icon_square" />
 </layer-list>

@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.player.host
+package com.github.vying.osc.player.host
 
 import android.media.AudioManager
 import org.junit.Assert.assertEquals

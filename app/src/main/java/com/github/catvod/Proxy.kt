@@ -1,7 +1,7 @@
 package com.github.catvod
 
-import com.github.VVbox.osc.server.RemoteServer
-import com.github.VVbox.osc.util.AppContextHolder
+import com.github.vying.osc.server.RemoteServer
+import com.github.vying.osc.util.AppContextHolder
 
 class Proxy {
 

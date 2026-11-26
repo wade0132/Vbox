@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.ui.player
+package com.github.vying.osc.ui.player
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -7,10 +7,10 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.github.VVbox.osc.ui.ComposeTestActivity
-import com.github.VVbox.osc.player.state.PlayerActions
-import com.github.VVbox.osc.player.state.PlayerUiState
-import com.github.VVbox.osc.testing.TestApplication
+import com.github.vying.osc.ui.ComposeTestActivity
+import com.github.vying.osc.player.state.PlayerActions
+import com.github.vying.osc.player.state.PlayerUiState
+import com.github.vying.osc.testing.TestApplication
 import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test

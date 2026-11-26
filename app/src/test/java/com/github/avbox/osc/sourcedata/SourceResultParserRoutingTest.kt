@@ -1,7 +1,7 @@
-package com.github.VVbox.osc.sourcedata
+package com.github.vying.osc.sourcedata
 
-import com.github.VVbox.osc.bean.AbsXml
-import com.github.VVbox.osc.ui.DetailResponseGuard
+import com.github.vying.osc.bean.AbsXml
+import com.github.vying.osc.ui.DetailResponseGuard
 import com.google.gson.Gson
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking

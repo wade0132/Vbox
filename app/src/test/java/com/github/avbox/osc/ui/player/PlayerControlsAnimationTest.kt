@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.ui.player
+package com.github.vying.osc.ui.player
 
 import androidx.compose.animation.core.FastOutLinearInEasing
 import androidx.compose.animation.core.LinearOutSlowInEasing

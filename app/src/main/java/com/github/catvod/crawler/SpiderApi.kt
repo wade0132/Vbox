@@ -7,10 +7,10 @@ import android.util.Base64
 import android.view.Surface
 import android.view.WindowManager
 
-import com.github.VVbox.osc.server.ControlManager
-import com.github.VVbox.osc.util.AppContextHolder
-import com.github.VVbox.osc.util.ActivityStack
-import com.github.VVbox.osc.util.AppLog
+import com.github.vying.osc.server.ControlManager
+import com.github.vying.osc.util.AppContextHolder
+import com.github.vying.osc.util.ActivityStack
+import com.github.vying.osc.util.AppLog
 import com.google.gson.JsonArray
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject

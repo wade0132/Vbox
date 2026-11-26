@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.data
+package com.github.vying.osc.data
 
 import java.time.DayOfWeek
 import java.time.LocalDate

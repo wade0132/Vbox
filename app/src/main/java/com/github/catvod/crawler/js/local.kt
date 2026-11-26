@@ -2,8 +2,8 @@ package com.github.catvod.crawler.js
 
 import androidx.annotation.Keep
 
-import com.github.VVbox.osc.util.KV
-import com.github.VVbox.osc.util.AppLog
+import com.github.vying.osc.util.KV
+import com.github.vying.osc.util.AppLog
 import com.whl.quickjs.wrapper.Function
 
 class local {

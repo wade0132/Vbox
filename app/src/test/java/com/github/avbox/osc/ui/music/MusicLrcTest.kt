@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.ui.music
+package com.github.vying.osc.ui.music
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

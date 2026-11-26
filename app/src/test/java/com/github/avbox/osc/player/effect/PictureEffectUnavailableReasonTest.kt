@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.player.effect
+package com.github.vying.osc.player.effect
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

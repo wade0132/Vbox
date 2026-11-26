@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.player.engine.iso
+package com.github.vying.osc.player.engine.iso
 
 import java.util.Collections
 import java.util.concurrent.ConcurrentHashMap

@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.util.kvcodec
+package com.github.vying.osc.util.kvcodec
 
 import com.google.gson.JsonArray
 import com.google.gson.JsonParser

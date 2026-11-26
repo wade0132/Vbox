@@ -1,9 +1,9 @@
-package com.github.VVbox.osc.util.kv
+package com.github.vying.osc.util.kv
 
 import com.google.gson.JsonArray
 import com.google.gson.reflect.TypeToken
-import com.github.VVbox.osc.util.KVKeys
-import com.github.VVbox.osc.util.kvcodec.KVDecoder
+import com.github.vying.osc.util.KVKeys
+import com.github.vying.osc.util.kvcodec.KVDecoder
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull

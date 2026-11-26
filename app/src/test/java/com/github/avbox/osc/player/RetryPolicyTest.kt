@@ -1,6 +1,6 @@
-package com.github.VVbox.osc.player
+package com.github.vying.osc.player
 
-import com.github.VVbox.osc.player.core.RetryPolicy
+import com.github.vying.osc.player.core.RetryPolicy
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test

@@ -8,16 +8,16 @@ plugins {
 }
 
 android {
-    namespace = "com.github.VVbox.osc"
+    namespace = "com.github.vying.osc"
     compileSdk = libs.versions.compileSdk.get().toInt()
     ndkVersion = libs.versions.ndk.get()
 
     defaultConfig {
-        applicationId = "com.github.VVbox.osc"
+        applicationId = "com.github.vying.osc"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
-        versionCode = 44
-        versionName = "1.4.0"
+        versionCode = 45
+        versionName = "1.5"
         multiDexEnabled = true
         ndk {
             abiFilters += setOf("arm64-v8a")

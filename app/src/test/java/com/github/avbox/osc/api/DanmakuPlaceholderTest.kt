@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.api
+package com.github.vying.osc.api
 
 import okhttp3.HttpUrl.Companion.toHttpUrl
 import org.junit.Assert.assertEquals

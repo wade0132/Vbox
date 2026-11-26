@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.ui
+package com.github.vying.osc.ui
 
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull

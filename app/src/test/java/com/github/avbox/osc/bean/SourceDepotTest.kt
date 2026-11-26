@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.bean
+package com.github.vying.osc.bean
 
 import com.google.gson.Gson
 import com.google.gson.JsonArray

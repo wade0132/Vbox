@@ -11,9 +11,9 @@ import com.github.catvod.crawler.Spider
 import com.github.catvod.crawler.SpiderNull
 import com.github.catvod.crawler.SpiderReaper
 import com.github.catvod.net.OkHttp
-import com.github.VVbox.osc.BuildConfig
-import com.github.VVbox.osc.net.HttpClients
-import com.github.VVbox.osc.util.AppLog
+import com.github.vying.osc.BuildConfig
+import com.github.vying.osc.net.HttpClients
+import com.github.vying.osc.util.AppLog
 
 import org.json.JSONException
 import org.json.JSONObject

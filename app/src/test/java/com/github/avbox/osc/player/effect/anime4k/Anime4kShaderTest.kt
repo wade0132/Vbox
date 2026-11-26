@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.player.effect.anime4k
+package com.github.vying.osc.player.effect.anime4k
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

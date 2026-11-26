@@ -1,7 +1,7 @@
-package com.github.VVbox.osc.player
+package com.github.vying.osc.player
 
 import android.content.res.Configuration
-import com.github.VVbox.osc.R
+import com.github.vying.osc.R
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith

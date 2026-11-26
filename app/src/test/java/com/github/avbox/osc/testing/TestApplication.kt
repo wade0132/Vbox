@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.testing
+package com.github.vying.osc.testing
 
 import android.app.Application
 

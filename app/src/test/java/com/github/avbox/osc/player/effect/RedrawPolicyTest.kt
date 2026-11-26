@@ -1,6 +1,6 @@
-package com.github.VVbox.osc.player.effect
+package com.github.vying.osc.player.effect
 
-import com.github.VVbox.osc.player.core.RedrawPolicy
+import com.github.vying.osc.player.core.RedrawPolicy
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test

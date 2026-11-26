@@ -1,9 +1,9 @@
-package com.github.VVbox.osc.ui
+package com.github.vying.osc.ui
 
-import com.github.VVbox.osc.player.core.PlayState
-import com.github.VVbox.osc.ui.music.LyricLine
-import com.github.VVbox.osc.ui.music.MusicPlayMode
-import com.github.VVbox.osc.ui.music.MusicPlayerState
+import com.github.vying.osc.player.core.PlayState
+import com.github.vying.osc.ui.music.LyricLine
+import com.github.vying.osc.ui.music.MusicPlayMode
+import com.github.vying.osc.ui.music.MusicPlayerState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull

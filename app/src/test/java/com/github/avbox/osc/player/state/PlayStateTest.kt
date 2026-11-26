@@ -1,6 +1,6 @@
-package com.github.VVbox.osc.player.state
+package com.github.vying.osc.player.state
 
-import com.github.VVbox.osc.player.core.PlayState
+import com.github.vying.osc.player.core.PlayState
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

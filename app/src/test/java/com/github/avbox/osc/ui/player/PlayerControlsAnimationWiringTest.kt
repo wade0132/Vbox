@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.ui.player
+package com.github.vying.osc.ui.player
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,13 +16,13 @@ import androidx.compose.ui.test.up
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.github.VVbox.osc.ui.ComposeTestActivity
-import com.github.VVbox.osc.player.state.PlayerActions
-import com.github.VVbox.osc.player.state.PlayerUiState
-import com.github.VVbox.osc.testing.TestApplication
-import com.github.VVbox.osc.player.gesture.VideoGestureActions
-import com.github.VVbox.osc.player.gesture.VideoGestureHandler
-import com.github.VVbox.osc.player.gesture.VideoGestureSession
+import com.github.vying.osc.ui.ComposeTestActivity
+import com.github.vying.osc.player.state.PlayerActions
+import com.github.vying.osc.player.state.PlayerUiState
+import com.github.vying.osc.testing.TestApplication
+import com.github.vying.osc.player.gesture.VideoGestureActions
+import com.github.vying.osc.player.gesture.VideoGestureHandler
+import com.github.vying.osc.player.gesture.VideoGestureSession
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Rule

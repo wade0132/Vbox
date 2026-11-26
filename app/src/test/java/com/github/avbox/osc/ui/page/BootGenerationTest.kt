@@ -1,7 +1,7 @@
-package com.github.VVbox.osc.ui.page
+package com.github.vying.osc.ui.page
 
-import com.github.VVbox.osc.api.AppBootstrap
-import com.github.VVbox.osc.api.BootGeneration
+import com.github.vying.osc.api.AppBootstrap
+import com.github.vying.osc.api.BootGeneration
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking

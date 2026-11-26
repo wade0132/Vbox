@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.sync
+package com.github.vying.osc.sync
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

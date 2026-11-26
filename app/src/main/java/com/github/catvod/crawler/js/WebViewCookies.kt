@@ -2,8 +2,8 @@ package com.github.catvod.crawler.js
 
 import android.webkit.CookieManager
 
-import com.github.VVbox.osc.net.HttpClients
-import com.github.VVbox.osc.util.AppLog
+import com.github.vying.osc.net.HttpClients
+import com.github.vying.osc.util.AppLog
 
 import okhttp3.Cookie
 import okhttp3.CookieJar

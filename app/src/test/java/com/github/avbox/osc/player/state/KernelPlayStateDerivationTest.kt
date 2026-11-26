@@ -1,8 +1,8 @@
-package com.github.VVbox.osc.player.state
+package com.github.vying.osc.player.state
 
-import com.github.VVbox.osc.player.core.KernelPlayback
-import com.github.VVbox.osc.player.core.PlayState
-import com.github.VVbox.osc.player.core.deriveKernelPlayState
+import com.github.vying.osc.player.core.KernelPlayback
+import com.github.vying.osc.player.core.PlayState
+import com.github.vying.osc.player.core.deriveKernelPlayState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test

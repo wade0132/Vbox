@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.sourcedata
+package com.github.vying.osc.sourcedata
 
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.first

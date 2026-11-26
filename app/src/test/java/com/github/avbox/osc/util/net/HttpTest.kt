@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.util.net
+package com.github.vying.osc.util.net
 
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.cancelAndJoin

@@ -1,6 +1,6 @@
-package com.github.VVbox.osc.ui.navbar
+package com.github.vying.osc.ui.navbar
 
-import com.github.VVbox.osc.ui.WindowWidthClass
+import com.github.vying.osc.ui.WindowWidthClass
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

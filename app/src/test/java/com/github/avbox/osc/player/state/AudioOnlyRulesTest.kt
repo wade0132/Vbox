@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.player.state
+package com.github.vying.osc.player.state
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

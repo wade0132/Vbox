@@ -1,30 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 坚果云同步入口：单色矢量图标，运行时由 SettingsIconBadge 按主题色着色 -->
+<!-- 坚果云同步入口：采用 Material Symbols cloud_sync 官方字形（960 viewport，
+     y 轴负值坐标 + translateY 平移），与设置页其他图标同源同风格、线条粗细一致、
+     图案居中；fillColor 由 SettingsIconBadge 的 tint 统一着色。 -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
-
-    <!-- 云朵轮廓 -->
-    <path
-        android:fillColor="@android:color/transparent"
-        android:pathData="M6.8,18.4 L17.2,18.4 C19.0,18.4 20.3,17.1 20.3,15.4 C20.3,13.8 19.2,12.6 17.7,12.4 C17.3,9.4 14.8,7.2 11.7,7.2 C9.4,7.2 7.4,8.5 6.5,10.4 C5.1,10.7 4.1,11.9 4.1,13.4 C4.1,15.2 5.4,16.5 7.1,16.6"
-        android:strokeColor="#FFFFFFFF"
-        android:strokeLineCap="round"
-        android:strokeLineJoin="round"
-        android:strokeWidth="1.6" />
-
-    <!-- 坚果主体 -->
-    <path
-        android:fillColor="#FFFFFFFF"
-        android:pathData="M13.5,9.7 C15.6,9.7 17.2,11.6 17.2,14 C17.2,16.3 15.6,18 13.5,18 C11.4,18 9.8,16.3 9.8,14 C9.8,11.6 11.4,9.7 13.5,9.7 Z" />
-
-    <!-- 坚果盖子分界，用同色描边区分层次 -->
-    <path
-        android:fillColor="@android:color/transparent"
-        android:pathData="M10.2,11.8 C11.6,10.8 13.4,10.4 15.3,10.8 C16.1,11.0 16.8,11.3 17.2,11.7"
-        android:strokeColor="#FFFFFFFF"
-        android:strokeLineCap="round"
-        android:strokeWidth="1.1" />
+    android:viewportWidth="960"
+    android:viewportHeight="960">
+    <group android:translateY="960">
+        <path
+            android:fillColor="#FF1F1F1F"
+            android:pathData="M160-160v-80h109q-51-44-80-106t-29-134q0-112 68-197.5T400-790v84q-70 25-115 86.5T240-480q0 54 21.5 99.5T320-302v-98h80v240H160ZM600-160q-50 0-85-35t-35-85q0-48 33-82.5t81-36.5q17-36 50.5-58.5T720-480q53 0 91.5 34.5T858-360q42 0 72 29t30 70q0 42-29 71.5T860-160H600ZM716-520q-7-41-27-76t-49-62v98h-80v-240h240v80H691q43 38 70.5 89T797-520h-81ZM600-240h260q8 0 14-6t6-14q0-8-6-14t-14-6h-70v-50q0-29-20.5-49.5T720-400q-29 0-49.5 20.5T650-330v10h-50q-17 0-28.5 11.5T560-280q0 17 11.5 28.5T600-240Zm120-80Z" />
+    </group>
 </vector>

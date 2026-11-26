@@ -9,8 +9,8 @@ import androidx.media3.common.util.UriUtil
 
 import com.chaquo.python.PyObject
 import com.github.catvod.crawler.Spider
-import com.github.VVbox.osc.util.AppLog
-import com.github.VVbox.osc.util.RegexUtils
+import com.github.vying.osc.util.AppLog
+import com.github.vying.osc.util.RegexUtils
 
 import org.json.JSONArray
 import org.json.JSONException

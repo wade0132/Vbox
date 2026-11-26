@@ -5,11 +5,11 @@ import android.text.TextUtils
 import android.util.Base64
 
 import com.github.catvod.crawler.Spider
-import com.github.VVbox.osc.io.FileUtils
-import com.github.VVbox.osc.net.ProxyHeaderPolicy
-import com.github.VVbox.osc.util.AppLog
-import com.github.VVbox.osc.util.MD5
-import com.github.VVbox.osc.util.RegexUtils
+import com.github.vying.osc.io.FileUtils
+import com.github.vying.osc.net.ProxyHeaderPolicy
+import com.github.vying.osc.util.AppLog
+import com.github.vying.osc.util.MD5
+import com.github.vying.osc.util.RegexUtils
 
 import com.whl.quickjs.wrapper.ContextSetter
 import com.whl.quickjs.wrapper.Function

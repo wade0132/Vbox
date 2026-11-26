@@ -1,6 +1,6 @@
 package com.github.catvod.crawler.js
 
-import com.github.VVbox.osc.util.AppLog
+import com.github.vying.osc.util.AppLog
 import java.util.ArrayDeque
 import java.util.concurrent.ExecutorService
 

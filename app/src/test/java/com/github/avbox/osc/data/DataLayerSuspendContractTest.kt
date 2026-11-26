@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.data
+package com.github.vying.osc.data
 
 import kotlinx.coroutines.flow.Flow
 import org.junit.Assert.assertTrue

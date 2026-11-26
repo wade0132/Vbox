@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">V影视</string>
+    <string name="app_name">微影</string>
 
     <string name="settings_language">Language</string>
     <string name="settings_group_language_layout">Language &amp; Layout</string>
@@ -111,7 +111,7 @@
     <string name="search_no_result">No results for “%1$s”</string>
 
     <string name="cast_title">Cast to Device</string>
-    <string name="cast_hint">Make sure the TV/box has V影视 installed or DLNA casting enabled\nThe TV/box and the phone are connected to the same Wi-Fi</string>
+    <string name="cast_hint">Make sure the TV/box has 微影 installed or DLNA casting enabled\nThe TV/box and the phone are connected to the same Wi-Fi</string>
     <string name="cast_permission_hint">Allow the “Nearby devices” permission to search for cast devices\nAfter enabling it, tap “Refresh” to retry</string>
     <string name="cast_searching">Searching for devices…</string>
     <string name="cast_no_device">No devices found</string>

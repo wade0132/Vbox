@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.data
+package com.github.vying.osc.data
 
 import com.google.gson.JsonParser
 import org.junit.Assert.assertEquals

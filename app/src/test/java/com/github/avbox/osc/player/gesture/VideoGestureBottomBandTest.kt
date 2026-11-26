@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.player.gesture
+package com.github.vying.osc.player.gesture
 
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

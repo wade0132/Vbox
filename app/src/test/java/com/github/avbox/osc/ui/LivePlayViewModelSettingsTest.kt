@@ -1,8 +1,8 @@
-package com.github.VVbox.osc.ui
+package com.github.vying.osc.ui
 
-import com.github.VVbox.osc.bean.LiveChannelItem
-import com.github.VVbox.osc.bean.LiveSettingGroup
-import com.github.VVbox.osc.bean.LiveSettingItem
+import com.github.vying.osc.bean.LiveChannelItem
+import com.github.vying.osc.bean.LiveSettingGroup
+import com.github.vying.osc.bean.LiveSettingItem
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

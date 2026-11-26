@@ -4,8 +4,8 @@ import android.os.Build
 import android.util.Log
 
 import com.github.catvod.crawler.python.IPyLoader
-import com.github.VVbox.osc.base.App
-import com.github.VVbox.osc.util.AppLog
+import com.github.vying.osc.base.App
+import com.github.vying.osc.util.AppLog
 import com.undcover.freedom.pyramid.PythonLoader
 import com.undcover.freedom.pyramid.PythonSpider
 

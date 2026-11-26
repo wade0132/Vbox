@@ -1,9 +1,9 @@
-package com.github.VVbox.osc.player.state
+package com.github.vying.osc.player.state
 
-import com.github.VVbox.osc.bean.CastVideo
-import com.github.VVbox.osc.player.effect.PictureEffectUnavailableReason
-import com.github.VVbox.osc.player.effect.PicturePreset
-import com.github.VVbox.osc.player.effect.PictureProfile
+import com.github.vying.osc.bean.CastVideo
+import com.github.vying.osc.player.effect.PictureEffectUnavailableReason
+import com.github.vying.osc.player.effect.PicturePreset
+import com.github.vying.osc.player.effect.PictureProfile
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull

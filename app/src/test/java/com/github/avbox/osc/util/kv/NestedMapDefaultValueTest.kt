@@ -1,6 +1,6 @@
-package com.github.VVbox.osc.util.kv
+package com.github.vying.osc.util.kv
 
-import com.github.VVbox.osc.util.kvcodec.KVDecoder
+import com.github.vying.osc.util.kvcodec.KVDecoder
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test

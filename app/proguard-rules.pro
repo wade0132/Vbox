@@ -106,7 +106,7 @@
 
 -dontwarn androidx.media3.**
 
--keep class com.github.VVbox.osc.bean.** { *; }
+-keep class com.github.vying.osc.bean.** { *; }
 
 -keep class com.google.gson.**{*;}
 -keep class com.google.zxing.**{*;}
@@ -123,7 +123,7 @@
 -keep public class com.chaquo.python.** { *; }
 -dontwarn com.chaquo.python.**
 
--keep class com.github.VVbox.osc.** { *; }
+-keep class com.github.vying.osc.** { *; }
 -keep class com.github.catvod.** { *; }
 
 -dontwarn com.bea.xml.stream.MXParserFactory
@@ -266,7 +266,7 @@
     public static *** log(...);
 }
 
--assumenosideeffects class com.github.VVbox.osc.util.AppLog {
+-assumenosideeffects class com.github.vying.osc.util.AppLog {
     public static *** d(...);
     public static *** i(...);
     public static *** e(...);
@@ -322,8 +322,8 @@
 }
 
 # ---- 坚果云同步模块：Gson 反射模型与入口 ----
--keep class com.github.VVbox.osc.sync.** { *; }
--keep class com.github.VVbox.osc.ui.page.NutstoreSyncActivity { *; }
--keep class com.github.VVbox.osc.ui.page.NutstoreSyncViewModel { *; }
--keep class com.github.VVbox.osc.util.kv.** { *; }
--dontwarn com.github.VVbox.osc.sync.**
+-keep class com.github.vying.osc.sync.** { *; }
+-keep class com.github.vying.osc.ui.page.NutstoreSyncActivity { *; }
+-keep class com.github.vying.osc.ui.page.NutstoreSyncViewModel { *; }
+-keep class com.github.vying.osc.util.kv.** { *; }
+-dontwarn com.github.vying.osc.sync.**

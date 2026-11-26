@@ -1,6 +1,6 @@
-package com.github.VVbox.osc.api
+package com.github.vying.osc.api
 
-import com.github.VVbox.osc.bean.TmdbSearchHit
+import com.github.vying.osc.bean.TmdbSearchHit
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue

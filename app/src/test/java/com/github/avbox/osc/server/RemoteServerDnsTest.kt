@@ -1,4 +1,4 @@
-package com.github.VVbox.osc.server
+package com.github.vying.osc.server
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

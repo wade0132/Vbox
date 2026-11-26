@@ -1,7 +1,7 @@
-package com.github.VVbox.osc.api
+package com.github.vying.osc.api
 
-import com.github.VVbox.osc.bean.LiveSettingItem
-import com.github.VVbox.osc.bean.SourceBean
+import com.github.vying.osc.bean.LiveSettingItem
+import com.github.vying.osc.bean.SourceBean
 import com.google.gson.Gson
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject

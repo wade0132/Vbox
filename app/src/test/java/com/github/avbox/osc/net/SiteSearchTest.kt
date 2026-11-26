@@ -1,6 +1,6 @@
-package com.github.VVbox.osc.net
+package com.github.vying.osc.net
 
-import com.github.VVbox.osc.bean.SourceBean
+import com.github.vying.osc.bean.SourceBean
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

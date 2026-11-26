@@ -1,6 +1,6 @@
-package com.github.VVbox.osc.ui.page
+package com.github.vying.osc.ui.page
 
-import com.github.VVbox.osc.bean.Movie
+import com.github.vying.osc.bean.Movie
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
