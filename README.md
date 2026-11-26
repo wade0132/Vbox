@@ -10,7 +10,7 @@
 
 **基于 AVBox 二次开发的开源 Android 影视播放器框架**
 
-版本 `1.5` · 包名 `com.github.vying.osc` · Android 7.0+（`arm64-v8a`）· [AGPL-3.0](LICENSE)
+版本 `1.6` · 包名 `com.github.vying.osc` · Android 7.0+（`arm64-v8a`）· [AGPL-3.0](LICENSE)
 
 [下载安装包](https://github.com/wade0132/weiying/releases) · [提交 Issue](https://github.com/wade0132/weiying/issues) · [上游项目 AVBox](https://github.com/XiaochangXu/AVBox)
 </div>
@@ -21,7 +21,7 @@
 
 微影 是在 [AVBox](https://github.com/XiaochangXu/AVBox) v1.4.0 基础上二次开发的 Android 播放器框架，保留上游的点播、直播、TMDB 刮削与播放能力，并新增坚果云 WebDAV 多端同步与若干界面改进。
 
-- 版本：versionName `1.5` / versionCode `45`
+- 版本：versionName `1.6` / versionCode `46`
 - 包名：`com.github.vying.osc`
 - 架构：`arm64-v8a`，Android 7.0+
 - 体积：启用 R8 压缩并以官方 1.4.0 底包重组后，安装包约 29.25 MB
@@ -53,6 +53,7 @@
 - 设置页 GitHub 仓库链接改为本项目，关于页免责声明改写为「基于 axbox 二开」并补充出处链接
 - 开启 R8 代码与资源压缩，并以官方 1.4.0 底包重组，安装包约 29.25 MB
 - 修复全屏播放时亮度/音量分区随机型横竖屏配置偏移的问题（小米 13 等手机横屏下左侧亮度区缩水）
+- 首页新增「最近观看」卡片：位于「全部分类」上方，横向滑动展示最新 15 条播放记录，UI 与交互沿用「热门电影」卡片；右上角「全部」直达「记录 → 历史」
 
 ## 下载与安装
 

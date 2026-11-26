@@ -38,6 +38,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.github.vying.osc.R
+import com.github.vying.osc.event.UiChange
+import com.github.vying.osc.event.UiEvents
 import com.github.vying.osc.bean.VodInfo
 import com.github.vying.osc.data.VodCollect
 import com.github.vying.osc.ui.components.AppTopBarScaffold
@@ -76,6 +78,12 @@ fun RecordsPage(
     val collectItems by collectVm.items.collectAsStateWithLifecycle()
 
     var mode by rememberSaveable { mutableStateOf(RecordsMode.History) }
+    // 首页「最近观看」→「全部」：确保记录页切回「历史」分栏
+    LaunchedEffect(Unit) {
+        UiEvents.changes.collect { change ->
+            if (change is UiChange.OpenRecordsHistory) mode = RecordsMode.History
+        }
+    }
     val historyEdit by historyVm.editMode.collectAsStateWithLifecycle()
     val historySelected by historyVm.selected.collectAsStateWithLifecycle()
     val collectEdit by collectVm.editMode.collectAsStateWithLifecycle()

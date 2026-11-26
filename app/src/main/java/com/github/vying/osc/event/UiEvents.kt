@@ -7,6 +7,9 @@ import kotlinx.coroutines.flow.asSharedFlow
 sealed interface UiChange {
     data object HistoryChanged : UiChange
     data object PlaybackStarted : UiChange
+
+    /** 首页「最近观看」右上角「全部」：切到记录 tab 并选中历史分栏。 */
+    data object OpenRecordsHistory : UiChange
 }
 
 object UiEvents {

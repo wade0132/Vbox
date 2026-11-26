@@ -97,6 +97,8 @@
     <string name="home_load_timeout">Home page timed out. Check your network and try again</string>
     <string name="home_recommend">Recommended</string>
     <string name="home_all_categories">All Categories</string>
+    <string name="home_recent_watch">Recently Watched</string>
+    <string name="home_recent_watch_empty">No watch history yet</string>
 
     <string name="search_settings">Search Settings</string>
     <string name="search_no_site">No search sites selected. Tick them in Search Settings on the Home page</string>

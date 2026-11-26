@@ -142,6 +142,7 @@ fun HomePage(
     val rec by vm.rec.collectAsStateWithLifecycle()
     val partitions by vm.partitions.collectAsStateWithLifecycle()
     val sorts by vm.sorts.collectAsStateWithLifecycle()
+    val recentHistory by vm.recentHistory.collectAsStateWithLifecycle()
     val vodMenu = rememberVodCardMenuState(
         lookupCollected = vm::isVideoCollected,
         onCollectToggle = vm::toggleVideoCollect,
@@ -388,6 +389,25 @@ fun HomePage(
                         else -> {
                             Spacer(modifier = Modifier.height(topPad + 8.dp))
                         }
+                    }
+                }
+                item(key = "recent_watch") {
+                    ProvideTmdbPosterLookup(vm) {
+                        PartitionSection(
+                            title = stringResource(R.string.home_recent_watch),
+                            state = if (recentHistory.isEmpty()) {
+                                HomeViewModel.PartitionState.Empty
+                            } else {
+                                HomeViewModel.PartitionState.Ready
+                            },
+                            videos = recentHistory,
+                            onLoadMore = {},
+                            onCardClick = { video -> handleCardClick(vm, video, context) },
+                            onCardLongClick = { video -> vodMenu.show(video) },
+                            onOpenAll = { vm.openRecordsHistory() },
+                            emptyText = stringResource(R.string.home_recent_watch_empty),
+                            modifier = Modifier.padding(start = navStart),
+                        )
                     }
                 }
                 item(key = "cats") {
@@ -657,6 +677,7 @@ private fun PartitionSection(
     onCardLongClick: (Movie.Video) -> Unit,
     onOpenAll: (() -> Unit)? = null,
     onRetry: (() -> Unit)? = null,
+    emptyText: String? = null,
     cardWidth: Dp = 110.dp,
     modifier: Modifier = Modifier,
 ) {
@@ -704,7 +725,7 @@ private fun PartitionSection(
             }
 
             HomeViewModel.PartitionState.Empty -> Text(
-                text = stringResource(R.string.common_empty_content),
+                text = emptyText ?: stringResource(R.string.common_empty_content),
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(horizontal = 16.dp),

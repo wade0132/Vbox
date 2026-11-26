@@ -2,6 +2,7 @@ package com.github.vying.osc.ui.page
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.compose.runtime.snapshotFlow
 import com.github.vying.osc.R
 import com.github.vying.osc.api.AppBootstrap
 import com.github.vying.osc.api.ApiConfig
@@ -10,6 +11,7 @@ import com.github.vying.osc.api.TmdbPoster
 import com.github.vying.osc.bean.AbsSortXml
 import com.github.vying.osc.bean.AbsXml
 import com.github.vying.osc.bean.Movie
+import com.github.vying.osc.bean.VodInfo
 import com.github.vying.osc.bean.MovieSort
 import com.github.vying.osc.bean.SourceBean
 import com.github.vying.osc.bean.TmdbPosterCache
@@ -38,14 +40,21 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
 import com.github.vying.osc.data.AppGraph
+import com.github.vying.osc.event.UiChange
+import com.github.vying.osc.event.UiEvents
+import com.github.vying.osc.ui.settings.UiSettingsState
 import com.github.vying.osc.ui.components.toVodInfo
 import kotlinx.coroutines.withContext
+
+private const val RECENT_HISTORY_LIMIT = 15
 
 class HomeViewModel : ViewModel(), TmdbPosterCache {
 
@@ -101,6 +110,10 @@ class HomeViewModel : ViewModel(), TmdbPosterCache {
     val rec = _rec.asStateFlow()
     private val _partitions = MutableStateFlow<List<Partition>>(emptyList())
     val partitions = _partitions.asStateFlow()
+
+    // 首页「最近观看」：历史记录表最新 15 条，随订阅 cid / 无痕模式实时刷新
+    private val _recentHistory = MutableStateFlow<List<Movie.Video>>(emptyList())
+    val recentHistory: StateFlow<List<Movie.Video>> = _recentHistory.asStateFlow()
 
     private val _pageLoading = MutableStateFlow(true)
     val pageLoading = _pageLoading.asStateFlow()
@@ -201,6 +214,50 @@ class HomeViewModel : ViewModel(), TmdbPosterCache {
                 }
             }
         }
+        observeRecentHistory()
+    }
+
+    /** 读取「记录-历史」的最新 15 条播放记录，转成与首页卡片一致的 Movie.Video。 */
+    private fun observeRecentHistory() {
+        scope.launch(Dispatchers.IO) {
+            AppBootstrap.subscriptionCid
+                .flatMapLatest { cid ->
+                    AppGraph.historyRepository.observeVodRecords(cid, RECENT_HISTORY_LIMIT)
+                }
+                .combine(
+                    snapshotFlow { UiSettingsState.config.incognito }.distinctUntilChanged()
+                ) { list, hidden -> list to hidden }
+                .collect { (list, hidden) ->
+                    _recentHistory.value = if (hidden) {
+                        emptyList()
+                    } else {
+                        list.map { it.toRecentVideo() }
+                    }
+                }
+        }
+    }
+
+    /** 「最近观看」右上角「全部」：切到记录 tab 的历史分栏。 */
+    fun openRecordsHistory() {
+        UiEvents.post(UiChange.OpenRecordsHistory)
+    }
+
+    private fun VodInfo.toRecentVideo(): Movie.Video = Movie.Video().apply {
+        id = this@toRecentVideo.id
+        name = this@toRecentVideo.name
+        pic = this@toRecentVideo.pic
+        sourceKey = this@toRecentVideo.sourceKey
+        year = this@toRecentVideo.year
+        en = this@toRecentVideo.en
+        type = this@toRecentVideo.type
+        area = this@toRecentVideo.area
+        lang = this@toRecentVideo.lang
+        state = this@toRecentVideo.state
+        note = this@toRecentVideo.note
+        actor = this@toRecentVideo.actor
+        director = this@toRecentVideo.director
+        des = this@toRecentVideo.des
+        last = this@toRecentVideo.last
     }
 
     override fun onCleared() {

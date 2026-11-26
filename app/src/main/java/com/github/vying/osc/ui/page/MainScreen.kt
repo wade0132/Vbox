@@ -45,6 +45,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.withFrameNanos
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -65,6 +66,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.compose.rememberLifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.github.vying.osc.R
+import com.github.vying.osc.event.UiChange
+import com.github.vying.osc.event.UiEvents
 import com.github.vying.osc.server.ControlManager
 import com.github.vying.osc.ui.LivePlayActivity
 import com.github.vying.osc.ui.components.AVBoxAlertDialog
@@ -179,6 +182,15 @@ private fun MainContent() {
                 pagerState.animateScrollToPage(index)
             } else {
                 pagerState.scrollToPage(index)
+            }
+        }
+    }
+    // 首页「最近观看」→「全部」：切到记录 tab（历史分栏由 RecordsPage 同步处理）
+    val currentSelectTab by rememberUpdatedState(selectTab)
+    LaunchedEffect(Unit) {
+        UiEvents.changes.collect { change ->
+            if (change is UiChange.OpenRecordsHistory) {
+                currentSelectTab(AppTab.RECORDS.ordinal)
             }
         }
     }
