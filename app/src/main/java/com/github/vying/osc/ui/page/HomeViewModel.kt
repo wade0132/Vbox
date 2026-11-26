@@ -48,6 +48,8 @@ import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
 import com.github.vying.osc.data.AppGraph
+import com.github.vying.osc.data.EpisodeTotals
+import com.github.vying.osc.data.PlaybackProgress
 import com.github.vying.osc.event.UiChange
 import com.github.vying.osc.event.UiEvents
 import com.github.vying.osc.ui.settings.UiSettingsState
@@ -55,6 +57,8 @@ import com.github.vying.osc.ui.components.toVodInfo
 import kotlinx.coroutines.withContext
 
 private const val RECENT_HISTORY_LIMIT = 15
+
+private const val RECENT_PROGRESS_SEPARATOR = " · "
 
 class HomeViewModel : ViewModel(), TmdbPosterCache {
 
@@ -114,6 +118,13 @@ class HomeViewModel : ViewModel(), TmdbPosterCache {
     // 首页「最近观看」：历史记录表最新 15 条，随订阅 cid / 无痕模式实时刷新
     private val _recentHistory = MutableStateFlow<List<Movie.Video>>(emptyList())
     val recentHistory: StateFlow<List<Movie.Video>> = _recentHistory.asStateFlow()
+
+    /** 「最近观看」卡片剧名下方的进度提示：播放到第几集 + 当前集已看百分比。 */
+    data class RecentProgress(val label: String, val percent: Int?)
+
+    // key = PlaybackProgress.key(sourceKey, vodId)，与 recentHistory 里的卡片一一对应
+    private val _recentProgress = MutableStateFlow<Map<String, RecentProgress>>(emptyMap())
+    val recentProgress: StateFlow<Map<String, RecentProgress>> = _recentProgress.asStateFlow()
 
     private val _pageLoading = MutableStateFlow(true)
     val pageLoading = _pageLoading.asStateFlow()
@@ -217,21 +228,33 @@ class HomeViewModel : ViewModel(), TmdbPosterCache {
         observeRecentHistory()
     }
 
-    /** 读取「记录-历史」的最新 15 条播放记录，转成与首页卡片一致的 Movie.Video。 */
+    /** 读取「记录-历史」的最新 15 条播放记录，连同播放进度一起转成首页卡片数据。 */
     private fun observeRecentHistory() {
         scope.launch(Dispatchers.IO) {
-            AppBootstrap.subscriptionCid
-                .flatMapLatest { cid ->
+            var lastList: List<VodInfo>? = null
+            combine(
+                AppBootstrap.subscriptionCid.flatMapLatest { cid ->
                     AppGraph.historyRepository.observeVodRecords(cid, RECENT_HISTORY_LIMIT)
-                }
-                .combine(
-                    snapshotFlow { UiSettingsState.config.incognito }.distinctUntilChanged()
-                ) { list, hidden -> list to hidden }
-                .collect { (list, hidden) ->
-                    _recentHistory.value = if (hidden) {
-                        emptyList()
-                    } else {
-                        list.map { it.toRecentVideo() }
+                },
+                PlaybackProgress.percents,
+                snapshotFlow { UiSettingsState.config.incognito }.distinctUntilChanged(),
+            ) { list, percents, hidden -> Triple(list, percents, hidden) }
+                .collect { (list, percents, hidden) ->
+                    if (hidden) {
+                        _recentHistory.value = emptyList()
+                        _recentProgress.value = emptyMap()
+                        // 置空以保证退出无痕后即使列表引用未变也能重建
+                        lastList = null
+                        return@collect
+                    }
+                    // 进度每 5s 刷新一次，只在历史列表真的换了一批数据时才重建卡片对象
+                    if (list !== lastList) {
+                        _recentHistory.value = list.map { it.toRecentVideo() }
+                        lastList = list
+                    }
+                    _recentProgress.value = list.associate { info ->
+                        val key = PlaybackProgress.key(info.sourceKey, info.id)
+                        key to info.toRecentProgress(percents[key])
                     }
                 }
         }
@@ -240,6 +263,26 @@ class HomeViewModel : ViewModel(), TmdbPosterCache {
     /** 「最近观看」右上角「全部」：切到记录 tab 的历史分栏。 */
     fun openRecordsHistory() {
         UiEvents.post(UiChange.OpenRecordsHistory)
+    }
+
+    /**
+     * 进度文案与「记录-历史」保持同一套规则：编号集名显示「第N集」（多语言由
+     * history_episode_num 提供），非编号集名（如「大结局」）显示原文；后面接
+     * 当前集已看百分比。用纯数字+%拼接，保证窄卡片在四种语言下都能一行显示完整。
+     */
+    private fun VodInfo.toRecentProgress(percent: Int?): RecentProgress {
+        val numbered = playNote.isEmpty() || EpisodeTotals.isNumberedEpisode(playNote)
+        val episodeLabel = if (numbered) {
+            str(R.string.history_episode_num, playIndex.coerceAtLeast(0) + 1)
+        } else {
+            playNote
+        }
+        val label = if (percent != null) {
+            episodeLabel + RECENT_PROGRESS_SEPARATOR + percent + "%"
+        } else {
+            episodeLabel
+        }
+        return RecentProgress(label, percent)
     }
 
     private fun VodInfo.toRecentVideo(): Movie.Video = Movie.Video().apply {

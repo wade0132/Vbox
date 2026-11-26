@@ -83,6 +83,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.github.vying.osc.R
 import com.github.vying.osc.bean.Movie
 import com.github.vying.osc.bean.MovieSort
+import com.github.vying.osc.data.PlaybackProgress
 import com.github.vying.osc.net.SiteSearch
 import com.github.vying.osc.ui.ConfigManageActivity
 import com.github.vying.osc.ui.PartitionListActivity
@@ -143,6 +144,7 @@ fun HomePage(
     val partitions by vm.partitions.collectAsStateWithLifecycle()
     val sorts by vm.sorts.collectAsStateWithLifecycle()
     val recentHistory by vm.recentHistory.collectAsStateWithLifecycle()
+    val recentProgress by vm.recentProgress.collectAsStateWithLifecycle()
     val vodMenu = rememberVodCardMenuState(
         lookupCollected = vm::isVideoCollected,
         onCollectToggle = vm::toggleVideoCollect,
@@ -406,6 +408,9 @@ fun HomePage(
                             onCardLongClick = { video -> vodMenu.show(video) },
                             onOpenAll = { vm.openRecordsHistory() },
                             emptyText = stringResource(R.string.home_recent_watch_empty),
+                            progress = { video ->
+                                recentProgress[PlaybackProgress.key(video.sourceKey, video.id)]
+                            },
                             modifier = Modifier.padding(start = navStart),
                         )
                     }
@@ -678,6 +683,7 @@ private fun PartitionSection(
     onOpenAll: (() -> Unit)? = null,
     onRetry: (() -> Unit)? = null,
     emptyText: String? = null,
+    progress: ((Movie.Video) -> HomeViewModel.RecentProgress?)? = null,
     cardWidth: Dp = 110.dp,
     modifier: Modifier = Modifier,
 ) {
@@ -755,12 +761,15 @@ private fun PartitionSection(
                 horizontalArrangement = Arrangement.spacedBy(12.dp),
             ) {
                 itemsIndexed(videos) { index, video ->
+                    val cardProgress = progress?.invoke(video)
                     VodCard(
                         video = video,
                         onClick = { onCardClick(video) },
                         onLongClick = { onCardLongClick(video) },
                         modifier = Modifier.width(cardWidth),
                         style = VodCardStyle.Stacked,
+                        subtitle = cardProgress?.label,
+                        progressFraction = cardProgress?.percent?.div(100f),
                     )
                 }
                 item(key = "more_$title") {
