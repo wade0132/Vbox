@@ -50,6 +50,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.painterResource
@@ -124,12 +126,36 @@ fun HomeGridLayout(
     val sort = partition?.sort ?: sorts.firstOrNull { it.id == selectedSortId }
     val navStart = contentPadding.calculateStartPadding(LocalLayoutDirection.current)
 
+    // 平板横屏（大屏 + 当前宽 > 高）下，固定的「最近观看」板块会压缩网格可视区，
+    // 因此收窄卡片；navStart 由调用方传入，保证侧边导航栏存在时板块不错位。
+    val configuration = LocalConfiguration.current
+    val density = LocalDensity.current
+    val tabletLandscape = configuration.smallestScreenWidthDp >= 600 &&
+        configuration.screenWidthDp > configuration.screenHeightDp
+    val recentCardWidth = if (tabletLandscape) 92.dp else 110.dp
+    var recentSectionHeight by remember { mutableStateOf(0.dp) }
+
     Box(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(top = topPadding),
         ) {
+            // 「订阅源」胶囊（顶栏）正下方：插入与沉浸布局完全一致的「最近观看」板块，
+            // 分类 tab 与网格整体退位下沉。测量其高度供下拉刷新指示器跟随定位。
+            Box(
+                modifier = Modifier.onGloballyPositioned { coordinates ->
+                    val h = with(density) { coordinates.size.height.toDp() }
+                    if (h != recentSectionHeight) recentSectionHeight = h
+                },
+            ) {
+                RecentWatchSection(
+                    vm = vm,
+                    onCardLongClick = onCardLongClick,
+                    modifier = Modifier.padding(start = navStart),
+                    cardWidth = recentCardWidth,
+                )
+            }
             HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.4f))
             HomeSortTabRow(
                 sorts = sorts,
@@ -274,7 +300,7 @@ fun HomeGridLayout(
         HomePullRefreshIndicator(
             state = pullState,
             isRefreshing = false,
-            topPadding = topPadding + HomeGridTabRowHeight,
+            topPadding = topPadding + recentSectionHeight + HomeGridTabRowHeight,
             modifier = Modifier.align(Alignment.TopCenter),
         )
     }

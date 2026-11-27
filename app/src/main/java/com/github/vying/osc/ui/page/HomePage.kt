@@ -143,8 +143,6 @@ fun HomePage(
     val rec by vm.rec.collectAsStateWithLifecycle()
     val partitions by vm.partitions.collectAsStateWithLifecycle()
     val sorts by vm.sorts.collectAsStateWithLifecycle()
-    val recentHistory by vm.recentHistory.collectAsStateWithLifecycle()
-    val recentProgress by vm.recentProgress.collectAsStateWithLifecycle()
     val vodMenu = rememberVodCardMenuState(
         lookupCollected = vm::isVideoCollected,
         onCollectToggle = vm::toggleVideoCollect,
@@ -394,26 +392,11 @@ fun HomePage(
                     }
                 }
                 item(key = "recent_watch") {
-                    ProvideTmdbPosterLookup(vm) {
-                        PartitionSection(
-                            title = stringResource(R.string.home_recent_watch),
-                            state = if (recentHistory.isEmpty()) {
-                                HomeViewModel.PartitionState.Empty
-                            } else {
-                                HomeViewModel.PartitionState.Ready
-                            },
-                            videos = recentHistory,
-                            onLoadMore = {},
-                            onCardClick = { video -> handleRecentCardClick(vm, video, context) },
-                            onCardLongClick = { video -> vodMenu.show(video) },
-                            onOpenAll = { vm.openRecordsHistory() },
-                            emptyText = stringResource(R.string.home_recent_watch_empty),
-                            progress = { video ->
-                                recentProgress[PlaybackProgress.key(video.sourceKey, video.id)]
-                            },
-                            modifier = Modifier.padding(start = navStart),
-                        )
-                    }
+                    RecentWatchSection(
+                        vm = vm,
+                        onCardLongClick = { video -> vodMenu.show(video) },
+                        modifier = Modifier.padding(start = navStart),
+                    )
                 }
                 item(key = "cats") {
                     HomeCategoryChips(
@@ -681,6 +664,46 @@ private fun handleRecentCardClick(vm: HomeViewModel, video: Movie.Video, context
         context.jumpToPlayback(video.id, video.sourceKey, video.name, video.pic)
     } else {
         context.dispatchVodCardClick(video, onAction = { vm.handleAction(it) })
+    }
+}
+
+/**
+ * 「最近观看」公共板块：沉浸（Horizontal）与普通（Vertical）两种首页布局共用，
+ * UI、数据与交互完全一致——复用 [PartitionSection] 渲染卡片、进度与空态，
+ * 点击直接全屏续播对应剧集，右上角「全部」切到「记录 → 历史」。
+ *
+ * @param cardWidth 平板横屏下由调用方传入更窄的卡片，避免固定板块过度挤占网格可视区。
+ */
+@Composable
+internal fun RecentWatchSection(
+    vm: HomeViewModel,
+    onCardLongClick: (Movie.Video) -> Unit,
+    modifier: Modifier = Modifier,
+    cardWidth: Dp = 110.dp,
+) {
+    val context = LocalContext.current
+    val recentHistory by vm.recentHistory.collectAsStateWithLifecycle()
+    val recentProgress by vm.recentProgress.collectAsStateWithLifecycle()
+    ProvideTmdbPosterLookup(vm) {
+        PartitionSection(
+            title = stringResource(R.string.home_recent_watch),
+            state = if (recentHistory.isEmpty()) {
+                HomeViewModel.PartitionState.Empty
+            } else {
+                HomeViewModel.PartitionState.Ready
+            },
+            videos = recentHistory,
+            onLoadMore = {},
+            onCardClick = { video -> handleRecentCardClick(vm, video, context) },
+            onCardLongClick = onCardLongClick,
+            onOpenAll = { vm.openRecordsHistory() },
+            emptyText = stringResource(R.string.home_recent_watch_empty),
+            progress = { video ->
+                recentProgress[PlaybackProgress.key(video.sourceKey, video.id)]
+            },
+            cardWidth = cardWidth,
+            modifier = modifier,
+        )
     }
 }
 

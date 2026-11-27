@@ -10,7 +10,7 @@
 
 **基于 AVBox 二次开发的开源 Android 影视播放器框架**
 
-版本 `1.6` · 包名 `com.github.vying.osc` · Android 7.0+（`arm64-v8a`）· [AGPL-3.0](LICENSE)
+版本 `1.6.0` · 包名 `com.github.vying.osc` · Android 7.0+（`arm64-v8a`）· [AGPL-3.0](LICENSE)
 
 [下载安装包](https://github.com/wade0132/weiying/releases) · [提交 Issue](https://github.com/wade0132/weiying/issues) · [上游项目 AVBox](https://github.com/XiaochangXu/AVBox)
 </div>
@@ -21,7 +21,7 @@
 
 微影 是在 [AVBox](https://github.com/XiaochangXu/AVBox) v1.4.0 基础上二次开发的 Android 播放器框架，保留上游的点播、直播、TMDB 刮削与播放能力，并新增坚果云 WebDAV 多端同步与若干界面改进。
 
-- 版本：versionName `1.6` / versionCode `46`
+- 版本：versionName `1.6.0` / versionCode `47`
 - 包名：`com.github.vying.osc`
 - 架构：`arm64-v8a`，Android 7.0+
 - 体积：启用 R8 压缩并以官方 1.4.0 底包重组后，安装包约 29.25 MB
@@ -55,6 +55,7 @@
 - 修复全屏播放时亮度/音量分区随机型横竖屏配置偏移的问题（小米 13 等手机横屏下左侧亮度区缩水）
 - 首页新增「最近观看」卡片：位于「全部分类」上方，横向滑动展示最新 15 条播放记录，UI 与交互沿用「热门电影」卡片；右上角「全部」直达「记录 → 历史」；剧名下方显示播放进度（播放到第几集 + 当前集已看百分比，数据复用历史记录）
 - 「最近观看」卡片点击后直接全屏播放对应剧集并续播（跳过详情页浏览）；进度与集数沿用「记录 → 历史」的播放记录，其它板块点击行为不变
+- 首页「海报样式」切换为「普通」后同样显示「最近观看」：位于「订阅源」下方，分类标签与影片网格整体退位下沉；两种布局共用同一板块，UI、进度、点击与「全部」跳转完全一致。平板横屏下自动收窄卡片并跟随侧栏偏移，避免挤压网格可视区
 
 ## 下载与安装
 
