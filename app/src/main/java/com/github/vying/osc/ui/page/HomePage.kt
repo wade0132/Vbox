@@ -404,7 +404,7 @@ fun HomePage(
                             },
                             videos = recentHistory,
                             onLoadMore = {},
-                            onCardClick = { video -> handleCardClick(vm, video, context) },
+                            onCardClick = { video -> handleRecentCardClick(vm, video, context) },
                             onCardLongClick = { video -> vodMenu.show(video) },
                             onOpenAll = { vm.openRecordsHistory() },
                             emptyText = stringResource(R.string.home_recent_watch_empty),
@@ -670,6 +670,18 @@ fun HomePullRefreshIndicator(
 
 private fun handleCardClick(vm: HomeViewModel, video: Movie.Video, context: android.content.Context) {
     context.dispatchVodCardClick(video, onAction = { vm.handleAction(it) })
+}
+
+/**
+ * 「最近观看」卡片：直接全屏播放历史记录里的对应剧集，不再停留详情页。
+ * 只有可打开详情的正常影片才走自动播放；文件夹 / 纯搜索源等特殊卡片沿用原分发逻辑。
+ */
+private fun handleRecentCardClick(vm: HomeViewModel, video: Movie.Video, context: android.content.Context) {
+    if (resolveVodCardTarget(video) is VodCardTarget.Detail) {
+        context.jumpToPlayback(video.id, video.sourceKey, video.name, video.pic)
+    } else {
+        context.dispatchVodCardClick(video, onAction = { vm.handleAction(it) })
+    }
 }
 
 @Composable

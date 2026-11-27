@@ -441,6 +441,9 @@ class DetailViewModel : ViewModel(), TmdbPosterCache {
         return true
     }
 
+    // 「首页-最近观看」跳转时置位：详情与历史集数恢复完成后自动全屏起播一次。
+    private var autoPlayPending = false
+
     private fun parseTarget(intent: Intent?): DetailNavStack.Target? {
         val bundle = intent?.extras ?: return null
         return DetailNavStack.Target(
@@ -449,12 +452,14 @@ class DetailViewModel : ViewModel(), TmdbPosterCache {
             title = bundle.getString("title", "").orEmpty(),
             picture = bundle.getString("picture", "").orEmpty(),
             fromCollect = bundle.getBoolean("collect", false),
+            autoPlay = bundle.getBoolean("autoPlay", false),
         )
     }
 
     private fun applyTarget(target: DetailNavStack.Target) {
         cancelInFlightContent()
         resetContentState()
+        autoPlayPending = target.autoPlay
         sendCommand(PlaybackCommand.StopForContentSwitch)
         sendCommand(PlaybackCommand.SetEpisodeSheetOpen(false))
         fromCollect = target.fromCollect
@@ -767,6 +772,12 @@ class DetailViewModel : ViewModel(), TmdbPosterCache {
                     if (retryDetailOnce("no-line")) return@launch
                     AppLog.i("echo-detail-no-line key=$sourceKey id=$vodId name=${info.name}")
                     _toastEvent.tryEmit(str(R.string.detail_no_playable_content))
+                } else if (autoPlayPending) {
+                    // 详情已从历史记录恢复出对应剧集（playIndex/playFlag），
+                    // 此时自动执行一次「播放」动作：进入全屏并按续播进度起播。
+                    autoPlayPending = false
+                    AppLog.i("echo-detail-autoplay key=$sourceKey id=$vodId index=${info.playIndex}")
+                    onPlayRequested(DetailPlaybackEntry.PlayCapsule)
                 }
             }
         } else {

@@ -8,6 +8,7 @@ internal class DetailNavStack {
         val title: String,
         val picture: String,
         val fromCollect: Boolean,
+        val autoPlay: Boolean = false,
     )
 
     private val stack = ArrayList<Target>()
